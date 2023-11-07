@@ -1,0 +1,283 @@
+{% load static %}
+<html> 
+    <!-- Head section holds info for the browser. --> 
+  
+    <head> 
+      <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249372971076788" crossorigin="anonymous"></script> --> 
+      <!-- Google tag (gtag.js) --> 
+      <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2HCC9GCJB"></script> --> 
+      <script> 
+        window.dataLayer = window.dataLayer || []; 
+  
+        function gtag() { 
+          dataLayer.push(arguments); 
+        } 
+        gtag('js', new Date()); 
+  
+        gtag('config', 'G-X2HCC9GCJB'); 
+      </script> 
+      <title>Sample Page</title> 
+      <link rel="stylesheet" href="{% static 'assets/css/index.css' %}"> 
+  
+      <!-- Info for the browser to decode our HTML code. --> 
+      <meta charset="utf-8" /> 
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  
+      <!-- Bootstrap files --> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css " 
+		 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous "> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> 
+      </script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> 
+      </script> 
+      <script src="{% static 'assets/js/main.js' %}"></script> 
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> 
+      </script> 
+  
+    </head> 
+    <!-- Body holds the content of the page. --> 
+  
+    <body> 
+  
+      <nav class="footer"> 
+        <div> 
+          <div class="save"> 
+            <a href="lesson.html"> <i class="fa fa-search"></i> 
+              <h6> Courses</h6> 
+            </a> 
+          </div> 
+  
+          <div class="save"> 
+            <a href="jamb.html"> <i class="fa fa-heart" aria-hidden="true"></i> 
+              <h6>Jamb practice</h6> 
+            </a> 
+          </div> 
+  
+          <div class="save"> 
+            <a href=""> <i class="fa fa-user-alt"></i> 
+              <h6>Log-in</h6> 
+            </a> 
+          </div> 
+        </div> 
+      </nav> 
+  
+      <div class="sticky-top"> 
+        <!-- Navbar --> 
+        <nav class="navbar navbar-expand-md navbar-light bg-light"> 
+          <a class="navbar-brand" href="#home"> 
+		  <img class="logo" src="{% static 'assets/images/20230828_221905_0000.png' %}" width="35" height="35"> 
+            <span class="align-text-center">Scholarpad</span> 
+          </a> 
+  
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"> 
+            <span class="navbar-toggler-icon"></span> 
+          </button> 
+  
+          <!-- Navbar links --> 
+          <div class="collapse navbar-collapse" id="nav"> 
+            <ul class="navbar-nav ml-auto"> 
+              <li class="nav-item"> 
+                <a class="nav-link" href="index.html"></a> 
+              </li> 
+              <li class="nav-item"> 
+                <a class="nav-link" href="lesson.html">Take lesson</a> 
+              </li> 
+              <li class="nav-item"> 
+                <a class="nav-link" href="quiz.html"> Quizzes </a> 
+              </li> 
+              <li class="nav-item"> 
+                <a class="nav-link" href="https://wa.me/09054525949?text=good day my name is " 
+                  data-action="send message">Chat a tutor</a> 
+              </li> 
+            </ul> 
+          </div> 
+        </nav> 
+      </div> 
+      <marquee> This site is still in testing hence not all lessons have been updated... Be sure to contact us to find 
+        out more updates </marquee> 
+      <!-- Contact section --> 
+      <div id="contact"> 
+        <div class="overlay" aria-hidden="true"></div> 
+        <div class="hello"> 
+          <h1 class="pink"> Your One Stop Academic Guide</h1> 
+          <p class="p"> 
+            ScholarPad offers learning materials for science subjects such as Physics, Chemistry, etc. 
+            Join millions of other students to learn using scholarpad! 
+          </p> 
+          <button>Join Scholarpad</button> 
+        </div> 
+      </div> 
+  
+      <br> 
+      <section class="courses reveal"> 
+        <h5 class="check"> 
+          <hr /> Popular Courses 
+          <hr /> 
+        </h5> 
+        <div class="popular"> 
+          <div class="flex2"> 
+		  <img class="img1 diff" src="{% static 'assets/images/images (23).jpeg' %}" alt=""> 
+            <h5> Introduction to Web <span>(Beginners)</span> </h5> 
+            <p>Deep dive into the fundamentals of the web, front-end and backend technologies to kick start your tech 
+              journey!</p> 
+          </div> 
+          <div class="flex2"> 
+		  <img class="img1" src="{% static 'assets/images/images (24).jpeg' %}"> 
+            <h5> Introduction to Python <span>(Beginners)</span> </h5> 
+            <p>Kick start your tech career by getting hands-on practical experience in python programming!</p> 
+          </div> 
+          <div class="flex2"> 
+		  <a href="physics.html"> <img class="img1 diff" src="{% static 'assets/images/images (25).jpeg' %}" alt=""></a> 
+            <h5> Fundamental Physics <span>(SS1-SS3)</span> </h5> 
+            <p>Get an understanding of the physical properties of matter, force, velocity, distance time graph, work, 
+              energy and so much more!</p> 
+          </div> 
+  
+          <div class="flex2"> 
+		  <a href="chemistry.html"><img class="img1 diff" src="{% static 'assets/images/images (26).jpeg' %}" alt=""></a> 
+            <h5> Chemistry Made Easy <span>(SS1-SS3)</span> </h5> 
+            <p>Get exposed to the chemical properties that constitute matter, electronic configuration, isotopes, and so 
+              much more! </p> 
+          </div> 
+          <div class="flex2"> 
+		  <a href="mathematics.html"> <img class="img1 diff2" src="{% static 'assets/images/images (51).jpeg' %}" alt=""></a> 
+            <h5> Simplified Mathematics <span>(SS1-SS3)</span> </h5> 
+            <p>Mathematics has never been easier! Having difficulties understanding the subject, learn with us!</p> 
+          </div> 
+        </div> 
+      </section> 
+      <br> 
+  
+      <section class="stats reveal"> 
+        <h5 class="check diff-check2"> 
+          <hr /> ScholarPad Statistics 
+          <hr /> 
+        </h5> 
+        <div> 
+          <div> 
+            <h5><span class="counter" data-target="1232">0</span> <span> Students</span></h5> 
+            <h5><span class="counter" data-target="4">0</span> <span> Subjects</span></h5> 
+          </div> 
+          <div> 
+            <h5><span class="counter" data-target="6">0</span> <span>Courses</span></h5> 
+            <h5><span class="counter" data-target="15">0</span> <span>Trainers</span></h5> 
+          </div> 
+        </div> 
+      </section> 
+      <br /> 
+  
+      <section class="newsletter why reveal"> 
+        <h5 class="check diff-check2"> 
+          <hr /> Why Choose ScholarPad 
+          <hr /> 
+        </h5> 
+        <div> 
+          <p>ScholarPad is your one stop academic guide, it provides science students in secondary schools 
+            an easy expo to understanding their core subjects like Physics, Chemistry, Biology, etc. 
+            We also provide beginner level introductory programming courses that will enable tech enthusiasts 
+            kick start their tech career. ScholarPad also helps jambites prepare for their examinations by offerring 
+            combos of jamb past questions and answers. 
+          </p> 
+          <button><a href="#learn">Learn More <i class="fa fa-arrow-right"></i></a></button> 
+        </div> 
+      </section> 
+      <br /> 
+  
+      <section class="testimonials reveal"> 
+        <h5 class="check"> 
+          <hr /> Testimonials 
+          <hr /> 
+        </h5> 
+        <div class="popular"> 
+          <div class="flex2"> 
+		  <img class="img1" src="{% static 'assets/images/1691748759178.jpg' %}"> 
+            <span>Engr. Enadeghe Endurance</span> 
+            <em> 
+              "As a former Mathematics teacher with five years teaching experience, I endorse Scholarpad as a means to 
+              prepare for your exams" 
+            </em> 
+          </div> 
+          <div class="flex2"> 
+		  <img class="img1" src="{% static 'assets/images/IMG-20230828-WA0045.jpg' %}" alt=""> 
+            <span>Amajuoritse Atakere</span> 
+            <em> 
+              "Scholarpad is a learning platform for students to prepare academically and gain tech skills" 
+            </em> 
+          </div> 
+          <div class="flex2"> 
+		  <img class="img1" src="{% static 'assets/images/1693418086120_1.jpg' %}" alt=""> 
+            <span>Abraham Amanokhai - CEO Itech institutes</span> 
+            <em> 
+              "We believe that technology is a means to enhance learning. Everyone deserves that 
+              opportunity" 
+            </em> 
+          </div> 
+        </div> 
+      </section> 
+      <br> 
+  
+      <h5 class="check diff-check reveal"> 
+        <hr /> Welcome Message 
+        <hr /> 
+      </h5> 
+      <section class="welcome reveal"> 
+        <div> 
+          <div class="overlay2" aria-hidden="true"></div> 
+	  <img src="{% static 'assets/images/page.jpg' %}" alt="welcome"> 
+          <a href="/video/Scholarpad_.mp4"><button class="buti"> Click here</button></a> 
+        </div> 
+      </section> 
+      <br /> 
+  
+      <section class="newsletter reveal"> 
+        <h5 class="check diff-check"> 
+          <hr /> Join Our Newsletter 
+          <hr /> 
+        </h5> 
+        <div> 
+          <p>Enter your email to subscribe to our newsletter to keep up with our latest updates 
+            and get first hand information about our services 
+          </p> 
+          <div> 
+            <input type="email" placeholder="abulele54@gmail.com"> 
+            <button>Subscribe</button> 
+          </div> 
+        </div> 
+      </section> 
+      <br /> 
+  
+      <footer class="ico reveal"> 
+        <div id="learn"> 
+		<a class="icon" href="mailto:ibrahimjunior08@gmail.com" data-action="send message"><img src="{% static 'assets/images/Mail.png' %}" 
+              alt="Email Icon" width="30px" height="30px"> 
+          </a> 
+  
+          <a class="icon" href="https://www.facebook.com/profile.php?id=100040356003690" data-action="send message"> <img 
+											 src="{% static 'assets/images/Facebook.png' %}" alt="facebook icon" width="30px" height="30px"> 
+          </a> 
+          <a class="icon" href="https://wa.me/09054525949?text=good morning my name is" data-action="send message"> <img 
+											src="{% static 'assets/images/Whatsapp.png' %}" alt="WhatsApp Icon" width="30px" height="30px"> 
+          </a> 
+	  <a class="icon call" href="tel:09060480451" data-action="call"><img src="{% static 'assets/images/images.png' %}" alt="call Icon" 
+              width="30" height="30px"> 
+          </a> 
+        </div> 
+        <h5> Reach us via mail or any of our social media handles</h5> 
+        <p align="center" class="you"> &copy; 2023 Designed by Assurance Ikogwe</p> 
+        <p align="center" class="you"> &copy; 2023 Homepage by Itech</p> 
+  
+        <div class="top" onclick="Totop()"> 
+          <i class="fa fa-arrow-up"></i> 
+        </div> 
+      </footer> 
+    </body> 
+  
+    </html>
