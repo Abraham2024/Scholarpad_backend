@@ -1,0 +1,204 @@
+ html { 
+     scroll-behavior: smooth; 
+     user-select: none;
+     -ms-user-select: none;
+     -webkit-user-select: none;
+     
+ } 
+  
+ /* Color the background and add some space to the sides of the main column. */ 
+ .container-fluid { 
+     background-color: #F8B003; 
+     /* We use !important to override the padding setting that Bootstrap already put for the container-fluid class. */ 
+     padding-left: 10% !important; 
+     padding-right: 10% !important; 
+ } 
+  
+ /* Color the main column background white. */ 
+ .col { 
+     background-color: white; 
+ } 
+  
+ /* Put a nice frame with smoothened corners and a soft shadow around all images on the page. */ 
+ img { 
+     border: 4px solid white; 
+     border-radius: 4px; 
+     box-shadow: 0px 4px 8px rgba(17,17,17,0.2); 
+ } 
+  
+  
+ .row.section { 
+     padding: 5%; 
+ } 
+  
+ .navbar { 
+     box-shadow: 0px 4px 8px rgba(17,17,17,0.2); 
+ } 
+  
+ /* Bold the navbar's brand and put spacing on its left so it shifts right. */ 
+ .navbar-brand { 
+     font-weight: bold; 
+     padding-left: 12%; 
+     color: indianred;
+ } 
+  
+ #home { 
+     padding: 20%; 
+     background-image: url("media/pavement.jpg"); 
+     background-size: cover; 
+  
+ } 
+  
+ #contact { 
+     background-image: url("images/Term_1.jepg");
+     height: 350px;
+     background-size: cover;
+     background-repeat: no-repeat;
+      }
+      
+.button {
+    display: flex;
+    flex-direction: column;
+}
+.video{
+  width: 100%;
+  height: 250px;
+}
+.components{
+  font-size: large;
+  text-transform: capitalize;
+  color: blue;
+  margin-top: 5px;
+}
+.one {
+  float: left;
+}
+.buton{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.button1{
+  margin-left: 40px;
+}
+#quote{
+ user-select: none;
+ -ms-user-select: none;
+ -webkit-user-select: none;
+  height: 150px;
+  background-color: black;
+  color: wheat;
+  justify-content: center;
+  align-content: center;
+}
+.sub {
+         font-size: 2rem;
+         color: #000000;
+         text-transform: uppercase;
+         margin-top: 30px;
+         text-align: center;
+       }
+   .subjects { 
+     display: flex; 
+     flex-direction: column; 
+     align-items: center; 
+     justify-content: center; 
+   } 
+  .iframe{
+    width: 100%;
+    height: 350px;
+  }
+   .button{
+       display: block;
+       width: 100%;
+       background-color: #4CAF50;
+       color: #fff;
+       text-align: center;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+       align-items: center
+       }
+       .div{
+         text-align: center;
+         justify-content: center;
+         align-items: center;
+       }
+  #subjects{
+    background-image: url("images/waves.jpeg");
+    height: 250px;
+    background-size: cover;
+    
+  }
+  .a{
+    text-align: center;
+    
+  }
+  .p{
+    margin-left: 5px;
+  }
+  .electro{
+    margin-left: 5px;
+  }
+  .Emspectrum{
+    background-color: skyblue;
+    width: 80%;
+    text-align: center;
+  }
+  .sum{
+    background-color: skyblue;
+    text-align: center;
+    width: 60%;
+  }
+  .summary{
+    margin-top: 10px;
+  }
+  .proj{
+    background-color: skyblue;
+    text-align: center;
+    width: 40%;
+  }
+  .define{
+    background-color: skyblue;
+    width: 40%;
+    text-align: center;
+  }
+  .quiz{
+    background-color: skyblue;
+    text-align: center;
+    width: 70%;
+  }
+  .empic{
+    background-image: url("/images/em.png");
+    background-size: cover;
+    height:250px;
+  }
+   .button:hover { 
+     background-color: #1565c0; 
+   } 
+   .character{
+     background-color: skyblue;
+     width: 80%;
+     text-align: center;
+   }
+  
+   .button a { 
+     color: #ffffff; 
+     text-decoration: none; 
+   } 
+  
+   .button:hover a { 
+     color: #ffffff; 
+     text-decoration: none; 
+   }
+ @media screen and (min-width: 600px) {
+   #subjects{
+     height: 400px;
+   }
+   #top
+{
+     width: 100%;
+     height: 25px;
+ }
+
+}

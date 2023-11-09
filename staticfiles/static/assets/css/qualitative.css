@@ -1,0 +1,240 @@
+ html {  
+      scroll-behavior: smooth;  
+      user-select: none; 
+      -ms-user-select: none; 
+      -webkit-user-select: none; 
+  
+  }  
+  
+  /* Color the background and add some space to the sides of the main column. */  
+  .container-fluid {  
+      background-color: #F8B003;  
+      /* We use !important to override the padding setting that Bootstrap already put for the container-fluid class. */  
+      padding-left: 10% !important;  
+      padding-right: 10% !important;  
+  }  
+  
+  /* Color the main column background white. */  
+  .col {  
+      background-color: white;  
+  }  
+  
+  /* Put a nice frame with smoothened corners and a soft shadow around all images on the page. */  
+  img {  
+      border: 4px solid white;  
+      border-radius: 4px;  
+      box-shadow: 0px 4px 8px rgba(17,17,17,0.2);  
+  }  
+  
+  
+  .row.section {  
+      padding: 5%;  
+  }  
+  
+  .navbar {  
+      box-shadow: 0px 4px 8px rgba(17,17,17,0.2);  
+  }  
+  
+  /* Bold the navbar's brand and put spacing on its left so it shifts right. */  
+  .navbar-brand {  
+      font-weight: bold;  
+      padding-left: 12%;  
+      color: indianred; 
+  }  
+  
+  #home {  
+      padding: 20%;  
+      background-image: url("media/pavement.jpg");  
+      background-size: cover;  
+  
+  }  
+  
+  #contact {  
+      background-image: url("images/Term_1.jepg"); 
+      height: 350px; 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+       } 
+  
+ .button { 
+     display: flex; 
+     flex-direction: column; 
+ } 
+   .iframe{
+    width: 100%;
+    height: 350px;
+  }
+ .one { 
+   float: left; 
+ } 
+ .buton{ 
+   display: flex; 
+   flex-direction: row; 
+   width: 100%; 
+ } 
+ .a{
+   color: white;
+ }
+ #but{
+   background-color: springgreen;
+   width: 100%;
+ }
+ .button1{ 
+   margin-left: 40px; 
+ } 
+ .quiz{
+   width: 60%;
+   background-color: skyblue;
+   text-align: center;
+ }
+ #quote{ 
+  user-select: none; 
+  -ms-user-select: none; 
+  -webkit-user-select: none; 
+   height: 150px; 
+   background-color: black; 
+   color: wheat; 
+   justify-content: center; 
+   align-content: center; 
+ } 
+ .sub { 
+          font-size: 2rem; 
+          color: #000000; 
+          text-transform: uppercase; 
+          margin-top: 30px; 
+          text-align: center; 
+        } 
+        .heading{
+          background-color: skyblue;
+          text-align: center;
+          height: 30px;
+        }
+        #subjects{
+          background-color: limegreen;
+          
+        }
+    .subjects {  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      justify-content: center;  
+    }  
+    .video{
+      width: 100%;
+      height: 250px;
+    }
+  
+
+   #subjects{ 
+     background-image: url("images/quality.jpeg"); 
+     height: 250px; 
+     background-size: cover; 
+     width: 104%;
+  
+   } 
+   #subject{
+     background-image: url("images/qualitative.jpeg");
+     height: 250px;
+     width: 104.2%;
+     background-size: cover;
+     background-repeat: no-repeat;
+   }
+   #subject1 { 
+     background-image: url("images/biology.jpeg"); 
+     height: 250px; 
+     background-size: cover; 
+   }  
+   .button {
+     display: block;
+     width: 100%;
+     padding: 10px;
+     background-color: #4CAF50;
+     color: #fff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+}
+     
+   
+  .ions{
+    background-color: skyblue;
+    text-align: center;
+    width: 80%;
+  }
+    .button a {  
+      color: #ffffff;  
+      text-decoration: none;  
+    }  
+  .define{
+    background-color: skyblue;
+    text-align: center;
+    width: 50%;
+  }
+  .test{
+    background-color: skyblue;
+    text-align: center;
+    width: 50%;
+  }
+  .image{
+    background-image: url
+  }
+  #button{
+    width: 100%;
+    background-color: deepskyblue;
+  }
+ 
+  .p{
+    margin-left: 7px;
+  }
+  .table::hover{
+    color: greenyellow;
+  }
+  .branches{
+    background-color: skyblue;
+    text-align: center;
+    width: 90%;
+    }
+    .cat{
+      background-color: skyblue;
+      text-align: center;
+      width: 80%;
+    }
+    .identify{
+      background-color: skyblue;
+      text-align: center;
+    }
+    .note{
+      color: red;
+    }
+    .button:hover a {  
+      color: #ffffff;  
+      text-decoration: none;  
+    } 
+    .tr{
+      color: red;
+    }
+  @media screen and (min-width: 600px) { 
+    #subjects{ 
+      height: 500px; 
+      width: 101.5%;
+    } 
+    #subject1{ 
+      height: 500px; 
+    } 
+    #subject{
+      width: 101.5%;
+      height: 500px;
+    }
+  } 
+  
+  
+  
+  
+ .topic{ 
+   background-color: skyblue; 
+   text-align: center; 
+   width: 50%; 
+       }

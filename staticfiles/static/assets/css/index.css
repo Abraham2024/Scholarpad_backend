@@ -1,0 +1,1287 @@
+/* This is how you write a comment in CSS! */ 
+  
+ /* Make the navbar links sliiide to their targets, instead of jumping. */ 
+ html { 
+   scroll-behavior: smooth; 
+   user-select: none; 
+   -ms-user-select: none; 
+   -webkit-user-select: none; 
+   background-color: white; 
+  
+  
+ } 
+  
+ body { 
+   width: 100%; 
+   margin: 0; 
+   padding: 0; 
+   position: relative; 
+   overflow-x: hidden; 
+ } 
+  
+ /* hover effects */ 
+ h5:hover, 
+ p:hover { 
+   color: #2196f3; 
+   cursor: pointer; 
+ } 
+  
+  
+ h5:hover hr { 
+   background-color: #2196f3; 
+ } 
+  
+ /* adding animations on reveal */ 
+ .reveal {   
+   opacity: 0; 
+   transition: all 2s; 
+ } 
+  
+ .reveal.visible { 
+   opacity: 1; 
+ } 
+  
+ .reveal.visible>h5>hr { 
+   animation: anime4 2s; 
+ } 
+  
+ @keyframes anime4 { 
+   0% { 
+     width: 10%; 
+   } 
+  
+   50% { 
+     width: 15%; 
+   } 
+  
+   60% { 
+     width: 20%; 
+   } 
+  
+   100% { 
+     width: 25%; 
+   } 
+ } 
+    
+ .reveal.visible>div { 
+   animation: anime6 2s; 
+ } 
+  
+ @keyframes anime6 { 
+   0% { 
+     transform: translateY(10%); 
+   } 
+  
+   50% { 
+     transform: translateY(5%); 
+   } 
+  
+   100% { 
+     transform: translateY(0%); 
+   } 
+ } 
+  
+ .reveal.visible.diff-check>hr { 
+   animation: anime7 2s; 
+ } 
+  
+ @keyframes anime7 { 
+   0% { 
+     width: 5%; 
+   } 
+  
+   50% { 
+     width: 10%; 
+   } 
+  
+   100% { 
+     width: 20%; 
+   } 
+ } 
+  
+ .reveal.visible .diff-check2>hr { 
+   animation: anime8 2s; 
+ } 
+  
+ @keyframes anime8 { 
+   0% { 
+     width: 6%; 
+   } 
+  
+   50% { 
+     width: 12%; 
+   } 
+  
+   100% { 
+     width: 18%; 
+   } 
+ } 
+  
+ .reveal.visible>div>p, 
+ .reveal.visible>div>button, 
+ .reveal.visible>div>div { 
+   animation: anime9 2s; 
+ } 
+  
+ @keyframes anime9 { 
+   0% { 
+     transform: translateY(20%); 
+   } 
+  
+   50% { 
+     transform: translateY(10%); 
+   } 
+  
+   100% { 
+     transform: translateY(0%); 
+   } 
+ } 
+  
+ .reveal.visible>div>div, 
+ .reveal.visible>div>a { 
+   animation: anime10 2s; 
+   animation-delay: 2s; 
+ } 
+  
+ @keyframes anime10 { 
+   0% { 
+     transform: translateX(20px); 
+     transform: translateY(-20px); 
+   } 
+  
+   25% { 
+     transform: translateX(0); 
+     transform: translateY(0px); 
+   } 
+  
+   50% { 
+     transform: translateX(20px); 
+     transform: translateY(-20px); 
+   } 
+  
+   100% { 
+     transform: translateX(0px); 
+     transform: translateY(0px); 
+   } 
+ } 
+  
+ .reveal.visible>div>a>button, 
+ .reveal.visible>div>div>button { 
+   animation: anime11 2s; 
+   animation-delay: 2s; 
+ } 
+  
+ @keyframes anime11 { 
+   0% { 
+     background-color: white; 
+     color: #F8B003; 
+   } 
+  
+   25% { 
+     background-color: white; 
+     color: #F8B003; 
+   } 
+  
+   50% { 
+     background-color: white; 
+     color: #F8B003; 
+   } 
+  
+   100% { 
+     background-color: #F8B003; 
+     color: white; 
+   } 
+ } 
+  
+ .reveal.visible>div>button>a { 
+   animation: anime12 2s; 
+   animation-delay: 2s; 
+ } 
+  
+ @keyframes anime12 { 
+   0% { 
+     color: #F8B003; 
+   } 
+  
+   25% { 
+     color: #F8B003; 
+   } 
+  
+   50% { 
+     color: #F8B003; 
+   } 
+  
+   100% { 
+     color: white; 
+   } 
+ } 
+  
+ .reveal.visible>div>button { 
+   animation: anime13 2s; 
+   animation-delay: 2s; 
+ } 
+  
+ @keyframes anime13 { 
+   0% { 
+     background-color: white; 
+     transform: translateX(20px); 
+     transform: translateY(-20px); 
+   } 
+  
+   25% { 
+     background-color: white; 
+     transform: translateX(0); 
+     transform: translateY(0px); 
+   } 
+  
+   50% { 
+     background-color: white; 
+     transform: translateX(20px); 
+     transform: translateY(-20px); 
+   } 
+  
+   100% { 
+     background-color: #F8B003; 
+     transform: translateX(0px); 
+     transform: translateY(0px); 
+   } 
+ } 
+  
+ .reveal.visible .overlay2 { 
+   animation: none; 
+ } 
+  
+ /* Color the background and add some space to the sides of the main column. */ 
+ .container-fluid { 
+   background-color: #F8B003; 
+   /* We use !important to override the padding setting that Bootstrap already put for the container-fluid class. */ 
+   padding-left: 10% !important; 
+   padding-right: 10% !important; 
+ } 
+  
+ /* Color the main column background white. */ 
+ .col { 
+   background-color: white; 
+ } 
+  
+ .logo { 
+   border-radius: 4px; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+   margin-top: -5px; 
+ } 
+  
+ /* Color the second (photography) section's background light gray for contrast. */ 
+ #photography { 
+   background-color: whitesmoke; 
+ } 
+  
+ /* Space out the photos in our gallery a little. */ 
+  
+ .col.main { 
+   background-color: white; 
+   box-shadow: 0 0 50px rgba(17, 17, 17, 0.5); 
+ } 
+  
+ .row.section { 
+   padding: 5%; 
+ } 
+  
+ .navbar { 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+ } 
+  
+ /* Bold the navbar's brand and put spacing on its left so it shifts right. */ 
+ .navbar-brand { 
+   font-weight: bold; 
+   color: indianred; 
+   text-align: center; 
+ } 
+  
+ .bigtext { 
+   text-align: center; 
+   position: relative; 
+   top: 50%; 
+   left: 50%; 
+   transform: translate(-50%, 0); 
+   color: white; 
+   text-shadow: 0 2px 8px rgba(17, 17, 17, 0.6); 
+ } 
+  
+ marquee { 
+   color: red; 
+ } 
+ #preloader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 9999;
+   overflow: hidden;
+   background: #fff;
+ }
+
+ #preloader:before {
+   content: "";
+   position: fixed;
+   top: calc(50% - 30px);
+   left: calc(50% - 30px);
+   border: 6px solid #5fcf80;
+   border-top-color: #fff;
+   border-bottom-color: #fff;
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   animation: animate-preloader 1s linear infinite;
+ }
+
+ @keyframes animate-preloader {
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+ @media screen and (max-width: 768px) {
+   [data-aos-delay] {
+     transition-delay: 0 !important;
+   }
+ }
+
+  
+ #contact { 
+   background-image: url("../images/Pic.jpeg"); 
+   width: inherit; 
+   height: 250px; 
+   background-size: cover; 
+   background-repeat: no-repeat; 
+   position: relative; 
+ } 
+  
+ .overlay { 
+   position: absolute; 
+   background-color: black; 
+   opacity: 50%; 
+   width: 100%; 
+   height: 100%; 
+   top: 0; 
+   left: 0; 
+ } 
+  
+ .video { 
+   width: 100%; 
+   height: 250px; 
+ } 
+  
+ .itec { 
+   width: 250px; 
+   height: 250px; 
+  
+ } 
+  
+ .hello { 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-content: center; 
+   color: ghostwhite; 
+   text-align: center; 
+   width: inherit; 
+   height: inherit; 
+   font-style: bold; 
+   position: absolute; 
+ } 
+  
+ .pink { 
+   color: goldenrod; 
+   font-size: 17px; 
+   font-weight: 500; 
+   align-self: center; 
+   text-transform: uppercase; 
+   animation: anime1 1.5s; 
+   transform-origin: left; 
+ } 
+  
+ @keyframes anime1 { 
+   0% { 
+     opacity: 0.8; 
+     transform: translateX(-50%); 
+   } 
+  
+   50% { 
+     opacity: 0.5; 
+     transform: translateX(-20%); 
+   } 
+  
+   100% { 
+     opacity: 1; 
+     transform: translateX(0%); 
+   } 
+ } 
+  
+ .hello>button { 
+   align-self: center; 
+   padding: 5px 10px; 
+   border: 1px solid goldenrod; 
+   color: white; 
+   background-color: goldenrod; 
+   border-radius: 5px; 
+   font-size: 12px; 
+   cursor: pointer; 
+   transform-origin: right; 
+   animation: anime2 1.5s; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+ } 
+  
+ .hello>button:hover { 
+   background-color: white; 
+   color: #F8B003; 
+ } 
+  
+ @keyframes anime2 { 
+   0% { 
+     opacity: 0.8; 
+     transform: translateX(50%); 
+   } 
+  
+   50% { 
+     opacity: 0.5; 
+     transform: translateX(20%); 
+   } 
+  
+   100% { 
+     opacity: 1; 
+     transform: translateX(0%); 
+   } 
+ } 
+  
+ .but { 
+   align-items: left; 
+   background-color: skyblue; 
+ } 
+  
+ .button { 
+   display: flex; 
+   flex-direction: column; 
+ } 
+  
+ .p { 
+   color: white; 
+   text-decoration: bold; 
+   font-size: 12px; 
+   font-weight: large; 
+   width: 80%; 
+   align-self: center; 
+   transform-origin: right; 
+   animation: anime2 1.5s; 
+  
+ } 
+  
+ .p:hover { 
+   color: white; 
+ } 
+  
+ .one { 
+   float: left; 
+ } 
+  
+ .buton { 
+   display: flex; 
+   flex-direction: row; 
+   width: 100%; 
+ } 
+  
+ .button1 { 
+   margin-left: 40px; 
+ } 
+   
+ .check { 
+   color: goldenrod; 
+   font-weight: large; 
+   text-align: center; 
+   margin-bottom: 20px; 
+   font-size: 20px; 
+   display: flex; 
+   flex-direction: row; 
+   justify-content: center; 
+   align-content: center; 
+   align-items: center; 
+ } 
+  
+ hr { 
+   width: 25%; 
+   background-color: goldenrod; 
+   align-self: center; 
+ } 
+  
+ .diff-check>hr { 
+   width: 20%; 
+ } 
+  
+ .diff-check2>hr { 
+   width: 18%; 
+ } 
+  
+ .html { 
+   background-image: url("assets/images/images (23).jpeg"); 
+   color: white; 
+   height: 80px; 
+   width: 40%; 
+   margin-left: 20px; 
+ } 
+  
+ .h { 
+   margin-left: 20px; 
+ } 
+  
+ .head { 
+   background-color: brown; 
+   height: 50px; 
+   float: left; 
+   display: block; 
+   color: #f2f2f2; 
+   text-align: center; 
+   text-decoration: none; 
+   font-size: large; 
+ } 
+  
+ .media { 
+   height: 15px; 
+ } 
+  
+ .socials { 
+   background-color: lightpink; 
+   height: fit content; 
+  
+ } 
+  
+ #tutor { 
+   background-color: whitesmoke; 
+   text-transform: capitalize; 
+ } 
+  
+ .sub { 
+   font-size: 2rem; 
+   color: #000000; 
+   text-transform: uppercase; 
+   margin-top: 30px; 
+   text-align: center; 
+ } 
+  
+ .courses { 
+   margin-top: 50px; 
+ } 
+  
+ .popular { 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-items: center; 
+   align-content: center; 
+   background-color: whitesmoke; 
+   padding-top: 80px; 
+ } 
+  
+ .flex2 { 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-items: center; 
+   align-content: center; 
+   background-color: white; 
+   padding-bottom: 40px; 
+   border-radius: 2px; 
+   color: black; 
+   width: 300px; 
+   height: 350px; 
+   margin-bottom: 80px; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+ } 
+  
+ .flex2>h5 { 
+   align-self: center; 
+   text-align: center; 
+   padding: 10px; 
+   padding-bottom: 0px; 
+   font-size: 18px; 
+ } 
+  
+ .flex2>h5>span { 
+   font-size: 16px; 
+   color: goldenrod; 
+   font-weight: 500; 
+ } 
+  
+ .flex2>h5:hover span { 
+   color: black; 
+ } 
+  
+ .flex2>p { 
+   text-align: center; 
+   padding: 10px; 
+ } 
+  
+ .flex2>em { 
+   text-align: center; 
+   padding: 10px; 
+   cursor: pointer; 
+ } 
+  
+ .flex2>em:hover { 
+   color: #2196f3; 
+ } 
+  
+ .flex2>span { 
+   align-self: center; 
+   text-align: center; 
+   padding: 10px; 
+   padding-bottom: 0px; 
+   font-weight: 700; 
+   cursor: pointer; 
+ } 
+  
+ .flex2>span:hover { 
+   color: #F8B003; 
+ } 
+  
+ .img1 { 
+   width: 300px; 
+   height: 200px; 
+ } 
+  
+ .diff { 
+   height: 150px; 
+ } 
+  
+ .diff2 { 
+   height: 175px; 
+ } 
+  
+ .active { 
+   display: flex; 
+ } 
+  
+ .welcome { 
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
+   align-content: center; 
+   background-color: whitesmoke; 
+   padding: 80 40px; 
+   border-radius: 2px; 
+   position: relative; 
+ } 
+  
+ .welcome>div { 
+   align-self: center; 
+   position: relative; 
+ } 
+  
+ .overlay2 { 
+   position: absolute; 
+   background-color: black; 
+   opacity: 50%; 
+   width: 100%; 
+   height: 100%; 
+   top: 0; 
+   left: 0; 
+ } 
+  
+ .welcome>div>img { 
+   align-self: center; 
+   width: 100%; 
+ } 
+  
+ .welcome>div>a { 
+   position: absolute; 
+   top: 100; 
+   left: 105; 
+ } 
+  
+ .welcome>div>a>button { 
+   padding: 8px 16px; 
+   border: 1px solid goldenrod; 
+   color: white; 
+   background-color: goldenrod; 
+   border-radius: 50px; 
+   font-size: 12px; 
+   cursor: pointer; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+ } 
+  
+ .welcome>div>a>button:hover { 
+   background-color: white; 
+   color: #F8B003; 
+ } 
+  
+ .subjects { 
+   display: flex; 
+   flex-direction: column; 
+   align-items: center; 
+   justify-content: center; 
+ } 
+  
+ .stats>div { 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-content: center; 
+   background-color: whitesmoke; 
+   padding-top: 100px; 
+ } 
+  
+ .stats>div>div { 
+   align-self: center; 
+   display: flex; 
+   flex-direction: row; 
+   margin-bottom: 100px; 
+   justify-content: space-between; 
+ } 
+  
+ .stats>div>div>h5 { 
+   display: flex; 
+   flex-direction: column; 
+ } 
+  
+ .stats>div>div>h5:hover { 
+   color: #F8B003; 
+ } 
+  
+ .stats>div>div>h5>span:first-child { 
+   text-align: center; 
+   color: #2196f3; 
+ } 
+  
+ .stats>div>div>h5>span:last-child { 
+   font-size: 12px; 
+ } 
+  
+ .stats>div>div>h5>span:last-child:hover, 
+ .stats>div>div>h5>span:first-child:hover { 
+   color: #F8B003; 
+ } 
+  
+ .stats>div>div>h5:first-child { 
+   margin-right: 80px; 
+ } 
+  
+ .newsletter>div { 
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-content: center; 
+   align-items: center; 
+   text-align: center; 
+   background-color: whitesmoke; 
+   padding: 100px 0px; 
+ } 
+  
+ .newsletter>div>p { 
+   width: 90%; 
+   line-height: 1.8rem; 
+   font-weight: 400; 
+ } 
+  
+ .newsletter>div>button { 
+   border: 1px solid goldenrod; 
+   padding: 10px 20px; 
+   border-radius: 30px; 
+   background-color: goldenrod; 
+   color: white; 
+   margin-top: 30px; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+   cursor: pointer; 
+ } 
+  
+ .newsletter>div>button>a>i { 
+   margin-left: 6px; 
+ } 
+  
+ .newsletter>div>button:hover { 
+   background-color: white; 
+   color: #f8b003; 
+ } 
+  
+ .newsletter>div>button>a { 
+   text-decoration: none; 
+   text-decoration-style: none; 
+   color: white; 
+ } 
+  
+ .newsletter>div>button:hover a { 
+   color: #F8B003; 
+ } 
+  
+ .newsletter>div>div { 
+   display: flex; 
+   flex-direction: row; 
+   margin-top: 20px; 
+ } 
+  
+ .newsletter>div>div>input { 
+   border: 1px solid goldenrod; 
+   padding: 15px; 
+   border-radius: 30px; 
+   width: 100%; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+ } 
+  
+ .newsletter>div>div>button { 
+   border: 1px solid goldenrod; 
+   padding: 10px 20px; 
+   border-radius: 30px; 
+   background-color: goldenrod; 
+   color: white; 
+   margin-left: -15%; 
+   cursor: pointer; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+ } 
+  
+ .newsletter>div>div>button:hover { 
+   background-color: white; 
+   color: #F8B003; 
+ } 
+  
+ .ico { 
+   display: flex; 
+   flex-direction: column-reverse; 
+   justify-content: center; 
+   align-content: center; 
+   align-items: center; 
+   background-color: rgb(0, 0, 0, .78); 
+   padding-top: 30px; 
+ } 
+  
+ #learn { 
+   display: flex; 
+   padding-left: 40px; 
+   margin-top: 20px; 
+   margin-bottom: 90px; 
+ } 
+  
+ #learn>a { 
+   align-self: center; 
+   margin-right: 50px; 
+ } 
+  
+ .ico>h5 { 
+   text-align: center; 
+   color: white; 
+   margin-top: 20px; 
+ } 
+  
+ .icon { 
+   color: none; 
+   text-decoration-line: none; 
+   text-decoration-color: none; 
+   border: 1px solid goldenrod; 
+   background-color: goldenrod; 
+   border-radius: 100%; 
+   padding: 5px; 
+ } 
+  
+ .icon:hover { 
+   opacity: 60%; 
+ } 
+  
+ .icon>img { 
+   width: 100%; 
+   height: 100%; 
+ } 
+  
+ .you { 
+   color: white; 
+ } 
+  
+ .button { 
+   display: inline-block; 
+   padding: 12px 24px; 
+   border: none; 
+   border-radius: 6px; 
+   background-color: #2196f3; 
+   color: #ffffff; 
+   font-size: 1.4rem; 
+   text-decoration: none; 
+   text-align: center; 
+   transition: background-color 0.3s ease; 
+   margin-bottom: 15px; 
+   width: 300px; 
+   max-width: 80%; 
+ } 
+  
+ #subjects { 
+   background-image: url("assets/images/page.jpg"); 
+   height: 250px; 
+   background-size: cover; 
+ } 
+  
+ .footer { 
+   position: fixed; 
+   bottom: 0; 
+   width: 100%; 
+   z-index: 2;
+ } 
+  
+ .footer>div { 
+   display: flex; 
+   flex-direction: row; 
+   justify-content: space-between; 
+   background-color: white; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+   width: 100%; 
+   padding: 10px 20px; 
+ } 
+  
+ .save>a { 
+   display: flex; 
+   flex-direction: column; 
+ } 
+  
+ .save>a>i { 
+   align-self: center; 
+ } 
+  
+ .save>a:hover { 
+   text-decoration-line: none; 
+ } 
+  
+ .top { 
+   background-color: goldenrod; 
+   color: white; 
+   padding: 18px 20px; 
+   border-radius: 100%; 
+   font-size: 18px; 
+   position: absolute; 
+   bottom: 300; 
+   right: 20; 
+   cursor: pointer; 
+ } 
+  
+  
+ @media screen and (min-width: 600px) { 
+   .media { 
+     height: 15px; 
+  
+   } 
+  
+   .top { 
+     bottom: 50; 
+     right: 50; 
+   } 
+  
+   #contact { 
+     background-image: url("assets/images/images (49).jpeg"); 
+     height: 400px; 
+   } 
+  
+   .overlay { 
+     opacity: 70%; 
+   } 
+  
+   .h { 
+     margin-left: 20px; 
+   } 
+  
+   .html { 
+     color: white; 
+     height: 150px; 
+     width: 60%; 
+     margin-left: 30px; 
+   } 
+ } 
+  
+ @media screen and (min-width: 768px) { 
+   hr { 
+     width: 35%; 
+   } 
+  
+   @keyframes anime4 { 
+     0% { 
+       width: 15%; 
+     } 
+  
+     50% { 
+       width: 20%; 
+     } 
+  
+     60% { 
+       width: 25%; 
+     } 
+  
+     100% { 
+       width: 35%; 
+     } 
+   } 
+  
+   .diff-check>hr { 
+     width: 30%; 
+   } 
+  
+   @keyframes anime7 { 
+     0% { 
+       width: 5%; 
+     } 
+  
+     50% { 
+       width: 10%; 
+     } 
+  
+     60% { 
+       width: 20%; 
+     } 
+  
+     100% { 
+       width: 30%; 
+     } 
+   } 
+  
+   .diff-check2>hr { 
+     width: 29%; 
+   } 
+  
+   @keyframes anime8 { 
+     0% { 
+       width: 11%; 
+     } 
+  
+     50% { 
+       width: 18%; 
+     } 
+  
+     60% { 
+       width: 21%; 
+     } 
+  
+     100% { 
+       width: 29%; 
+     } 
+   } 
+  
+   .pink { 
+     font-size: 25px; 
+     margin-bottom: 20px; 
+   } 
+  
+   .p { 
+     font-size: 18px; 
+     width: 60%; 
+     margin-bottom: 30px; 
+   } 
+  
+   .hello>button { 
+     font-size: 18px; 
+     padding: 10px 20px; 
+   } 
+  
+   #quote { 
+     top: 90%; 
+     width: 70%; 
+     left: 120; 
+     font-size: 20px; 
+   } 
+  
+   #quote>h4 { 
+     font-size: 18px; 
+   } 
+  
+   #quote>h4>span { 
+     font-size: 18px; 
+   } 
+  
+   .popular { 
+     flex-direction: row; 
+     flex-wrap: wrap; 
+   } 
+  
+   .flex2 { 
+     margin-right: 20px; 
+     margin-left: 20px; 
+   } 
+  
+   .welcome>div>a { 
+     top: 270; 
+     left: 295; 
+   } 
+  
+   .welcome>div>a>button { 
+     font-size: 20px; 
+     padding: 20px 40px; 
+   } 
+  
+   .stats>div>div>h5>span:first-child { 
+     font-size: 40px; 
+   } 
+  
+   .stats>div>div>h5>span:last-child { 
+     font-size: 22px; 
+   } 
+  
+   .stats>div>div>h5:first-child { 
+     margin-right: 280px; 
+   } 
+  
+   .newsletter>div>p { 
+     width: 70%; 
+   } 
+  
+   .ico>div { 
+     margin-left: 80px; 
+   } 
+  
+   .ico>h5 { 
+     margin-left: 80px; 
+   } 
+  
+   .icon { 
+     padding: 9px; 
+   } 
+  
+   .footer { 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+     align-content: center; 
+  
+   } 
+  
+   .footer>div { 
+     width: 50%; 
+     border-radius: 20px 20px 0px 0px; 
+   } 
+ } 
+  
+ @media screen and (min-width: 1024px) { 
+   hr { 
+     width: 40%; 
+   } 
+  
+   @keyframes anime4 { 
+     0% { 
+       width: 10%; 
+     } 
+  
+     50% { 
+       width: 20%; 
+     } 
+  
+     60% { 
+       width: 30%; 
+     } 
+  
+     100% { 
+       width: 40%; 
+     } 
+   } 
+  
+   .diff-check>hr { 
+     width: 35%; 
+   } 
+  
+   @keyframes anime7 { 
+     0% { 
+       width: 15%; 
+     } 
+  
+     50% { 
+       width: 20%; 
+     } 
+  
+     60% { 
+       width: 25%; 
+     } 
+  
+     100% { 
+       width: 35%; 
+     } 
+   } 
+  
+   .diff-check2>hr { 
+     width: 34%; 
+   } 
+  
+   @keyframes anime8 { 
+     0% { 
+       width: 14%; 
+     } 
+  
+     50% { 
+       width: 19%; 
+     } 
+  
+     60% { 
+       width: 24%; 
+     } 
+  
+     100% { 
+       width: 34%; 
+     } 
+   } 
+  
+   .p { 
+     width: 50%; 
+   } 
+  
+   #quote { 
+     width: 55%; 
+     left: 300; 
+   } 
+  
+   .welcome>div>a { 
+     top: 300; 
+     left: 315; 
+   } 
+  
+   .welcome>div>a>button { 
+     font-size: 25px; 
+     padding: 20px 40px; 
+   } 
+  
+   .newsletter>div>p { 
+     width: 60%; 
+   } 
+ } 
+  
+ @media screen and (min-width: 1280px) { 
+   #contact { 
+     height: 500px; 
+   } 
+  
+   #quote { 
+     padding: 20px 10px; 
+   } 
+  
+   .pink { 
+     font-size: 30px; 
+   } 
+  
+   .p { 
+     font-size: 22px; 
+     width: 50%; 
+   } 
+  
+   .hello>button { 
+     font-size: 22px; 
+   } 
+  
+   #quote { 
+     top: 93%; 
+     width: 70%; 
+     left: 250; 
+     font-size: 22px; 
+   } 
+  
+   #quote>h4 { 
+     font-size: 22px; 
+   } 
+  
+   #quote>h4>span { 
+     font-size: 22px; 
+   } 
+  
+   .check { 
+     font-size: 30px; 
+   } 
+ }
