@@ -37,7 +37,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> 
       </script> 
-      <script src="{% static 'assets/js/main.js' %}"></script> 
+      <script src="{% static 'assets/js/main.js' %}" async></script> 
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> 
       </script> 
@@ -46,29 +46,41 @@
     <!-- Body holds the content of the page. --> 
   
     <body> 
-  
-      <nav class="footer"> 
-        <div> 
-          <div class="save"> 
-            <a href="lesson.html"> <i class="fa fa-search"></i> 
-              <h6> Courses</h6> 
-            </a> 
-          </div> 
-  
-          <div class="save"> 
-            <a href="jamb.html"> <i class="fa fa-heart" aria-hidden="true"></i> 
-              <h6>Jamb practice</h6> 
-            </a> 
-          </div> 
-  
-          <div class="save"> 
-            <a href=""> <i class="fa fa-user-alt"></i> 
-              <h6>Log-in</h6> 
-            </a> 
-          </div> 
-        </div> 
-      </nav> 
-  
+	         <nav class="footer">
+        <div>
+          <div class="save">
+		  {% if user.is_authenticated %}
+            <a href="https://scholarpad.netlify.app/lesson"> i class="fa fa-search"></i>
+              <h6> Courses</h6>
+            </a>
+	    {% else %}
+	    <a href="/login"> <i class="fa fa-search"></i>                                                   <h6> Courses</h6>
+            </a>
+	    {% endif %}
+          </div>
+
+          <div class="save">
+		  {% if user.is_authenticated %}
+            <a href="jamb.html"> <i class="fa fa-heart" aria-hidden="true"></i>
+              <h6>Jamb practice</h6>
+            </a>
+	    {% else %}
+	    <a href="/login"> <i class="fa fa-heart" aria-hidden="true"></i>
+              <h6>Jamb practice</h6>                          </a>
+	    {% endif %}
+          </div>
+
+          <div class="save">
+		  {% if user.is_authenticated %}
+            <a href="/logout"> <i class="fa fa-user-alt"></i>
+              <h6>Log-out</h6>
+            </a>
+	    {% else %}
+	    <a href="/login"> <i class="fa fa-user-alt"></i>                                                     <h6>Log-in</h6>                                 </a>
+	    {% endif %}
+          </div>
+        </div>
+      </nav>
       <div class="sticky-top"> 
         <!-- Navbar --> 
         <nav class="navbar navbar-expand-md navbar-light bg-light"> 
@@ -85,11 +97,16 @@
           <div class="collapse navbar-collapse" id="nav"> 
             <ul class="navbar-nav ml-auto"> 
               <li class="nav-item"> 
-                <a class="nav-link" href="index.html"></a> 
+                <a class="nav-link" href="/"></a> 
               </li> 
-              <li class="nav-item"> 
-                <a class="nav-link" href="lesson.html">Take lesson</a> 
+              <li class="nav-item">
+		      {% if user.is_authenticated %}
+                <a class="nav-link" href="/lesson">Take lesson</a> 
+		{% else %}
+		<a class="nav-link" href="/login">Login/Signup</a>
+		{% endif %}
               </li> 
+	      {% if user.is_authenticated %}
               <li class="nav-item"> 
                 <a class="nav-link" href="quiz.html"> Quizzes </a> 
               </li> 
@@ -97,22 +114,40 @@
                 <a class="nav-link" href="https://wa.me/09054525949?text=good day my name is " 
                   data-action="send message">Chat a tutor</a> 
               </li> 
+	      {% else %}
+	      <li class="nav-item">                               <a class="nav-link" href="https://wa.me/09054525949?text=good day my name is "                        data-action="send message">Chat a tutor</a>                                                     </li>
+	      {% endif %}
             </ul> 
           </div> 
         </nav> 
       </div> 
-      <marquee> This site is still in testing hence not all lessons have been updated... Be sure to contact us to find 
-        out more updates </marquee> 
+      {% for feature in features %}
+      {% if user.is_authenticated %}
+      <marquee> Hello {{user.username}}...{{feature.details}} </marquee> 
+      {% else %}
+      <marquee> {{feature.details}} </marquee>
+      {% endif %}
+      {% endfor %}
       <!-- Contact section --> 
       <div id="contact"> 
         <div class="overlay" aria-hidden="true"></div> 
-        <div class="hello"> 
-          <h1 class="pink"> Your One Stop Academic Guide</h1> 
+        <div class="hello">
+          {% if user.is_authenticated %}
+		<h1 class="pink"> Welcome, {{user.username}} </h1>
           <p class="p"> 
             ScholarPad offers learning materials for science subjects such as Physics, Chemistry, etc. 
-            Join millions of other students to learn using scholarpad! 
+	    <br>
+	    Get started on your learning Journey
           </p> 
-          <button>Join Scholarpad</button> 
+	  {% else %}
+	  <h1 class="pink"> YOUR ONE STOP LEARNING GUIDE</h1>
+	  <p class="p">                                       ScholarPad offers learning materials for science subjects such as Physics, Chemistry, etc.                                                            Join millions of other students to learn using scholarpad!                                        </p>
+	  {% endif %}
+	  {% if user.is_authenticated %}
+	  <button>Get Started</button>
+	  {% else %}
+	  <button>Join Scholarpad</button>
+	  {% endif %}
         </div> 
       </div> 
   
@@ -135,21 +170,33 @@
             <p>Kick start your tech career by getting hands-on practical experience in python programming!</p> 
           </div> 
           <div class="flex2"> 
-		  <a href="physics.html"> <img class="img1 diff" src="{% static 'assets/images/images (25).jpeg' %}" alt=""></a> 
+		  {% if user.is_authenticated %}
+		  <a href="/physics"> <img class="img1 diff" src="{% static 'assets/images/images (25).jpeg' %}" alt=""></a> 
+		  {% else %}
+		  <a href="/login"> <img class="img1 diff" src="{% static 'assets/images/images (25).jpeg' %}" alt=""></a>
+		  {% endif %}
             <h5> Fundamental Physics <span>(SS1-SS3)</span> </h5> 
             <p>Get an understanding of the physical properties of matter, force, velocity, distance time graph, work, 
               energy and so much more!</p> 
           </div> 
   
           <div class="flex2"> 
-		  <a href="chemistry.html"><img class="img1 diff" src="{% static 'assets/images/images (26).jpeg' %}" alt=""></a> 
+		  {% if user.is_authenticated %}
+		  <a href="/chemistry"><img class="img1 diff" src="{% static 'assets/images/images (26).jpeg' %}" alt=""></a>
+		  {% else %}
+		  <a href="/login"><img class="img1 diff" src="{% static 'assets/images/images (26).jpeg' %}" alt=""></a>
+		  {% endif %}
             <h5> Chemistry Made Easy <span>(SS1-SS3)</span> </h5> 
             <p>Get exposed to the chemical properties that constitute matter, electronic configuration, isotopes, and so 
               much more! </p> 
           </div> 
           <div class="flex2"> 
-		  <a href="mathematics.html"> <img class="img1 diff2" src="{% static 'assets/images/images (51).jpeg' %}" alt=""></a> 
-            <h5> Simplified Mathematics <span>(SS1-SS3)</span> </h5> 
+		  {% if user.is_authenticated %}
+		  <a href="/mathematics"> <img class="img1 diff2" src="{% static 'assets/images/images (51).jpeg' %}" alt=""></a>
+		  {% else %}
+		  <a href="/login"> <img class="img1 diff2" src="{% static 'assets/images/images (51).jpeg' %}" alt=""></a>
+		  {% endif %}
+            <h5> Simplified Mathematics <span>(SS1-SS3)</span> </h5>
             <p>Mathematics has never been easier! Having difficulties understanding the subject, learn with us!</p> 
           </div> 
         </div> 
@@ -232,7 +279,7 @@
         <div> 
           <div class="overlay2" aria-hidden="true"></div> 
 	  <img src="{% static 'assets/images/page.jpg' %}" alt="welcome"> 
-          <a href="/video/Scholarpad_.mp4"><button class="buti"> Click here</button></a> 
+	  <a href="{% static 'assets/video/Scholarpad_.mp4' %}"><button class="buti"> Click here</button></a> 
         </div> 
       </section> 
       <br /> 
