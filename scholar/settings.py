@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-&*#^s-!)6ixkm#iza8#*t0m-@!9@b35@e1gzezlv-#huokik&%
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://scholarpad.up.railway.app"]
 
 
 # Application definition
@@ -44,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
