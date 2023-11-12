@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User,auth 
 from django.contrib import messages
 from .models import Feature
+from .models import UserProfile
 
 # Create your views here.
 
@@ -12,30 +13,44 @@ def index(request):
     features = Feature.objects.all()
     return render(request, 'index.html', {'features': features})
 
+from .models import UserProfile  # Import your UserProfile model
+
 def signup(request):
-     if request.method == 'POST':
-         username = request.POST['username']
-         email = request.POST['email']
-         password = request.POST['password']
-         password2 = request.POST['password2']
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
 
-         if password == password2:
-             if User.objects.filter(email = email).exists():
-                 messages.info(request, 'Email has already been used' )
-                 return redirect('signup')
-             elif User.objects.filter(username = username).exists():
-                 messages.info(request, 'Username already exists' )
-                 return redirect('signup')
+        if password == password2:
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email has already been used' )
+                return redirect('signup')
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, 'Username already exists' )
+                return redirect('signup')
+            else:
+                user = User.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password
+                )
 
-             else:
-                 user = User.objects.create_user(username = username, email = email, password = password)
-                 user.save;
-                 return redirect('login')
-         else:
-             messages.info(request, 'Password is not the same')
-             return redirect('signup')
-     else:
-         return render(request, 'signup.html')
+                UserProfile.objects.create(
+                    user=user,
+                    first_name=first_name,
+                    last_name=last_name
+                )
+                messages.info(request, 'Account created succesfully')
+
+                return redirect('login')
+        else:
+            messages.info(request, 'Password is not the same')
+            return redirect('signup')
+    else:
+        return render(request, 'signup.html')
 
 def login(request):
     if request.method == "POST":
