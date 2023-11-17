@@ -6,13 +6,36 @@ from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Feature
 from .models import UserProfile
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import UserScore, Quiz
+import json
+
+def save_user_score(request, quiz_identifier):
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+        name = data.get('name')
+        score = data.get('score')
+        date = data.get('date')
+
+        # Get or create the quiz based on the identifier
+        quiz, created = Quiz.objects.get_or_create(identifier=quiz_identifier)
+
+        user_score = UserScore(name=name, score=score, quiz=quiz, date=date)
+        user_score.save()
+
+        return JsonResponse({'message': 'User score saved successfully'})
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
 
 # Create your views here.
+def combo(request):
+    return render(request, 'combo.html')
+
 
 def index(request):
     features = Feature.objects.all()
     return render(request, 'index.html', {'features': features})
-
 from .models import UserProfile  # Import your UserProfile model
 
 def signup(request):
@@ -41,7 +64,7 @@ def signup(request):
                 UserProfile.objects.create(
                     user=user,
                     first_name=first_name,
-                    last_name=last_name
+                    last_name=last_name,
                 )
                 messages.info(request, 'Account created succesfully')
 
@@ -71,3 +94,17 @@ def logout(request):
      auth.logout(request)
      return redirect('/')
 
+def profile(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    return render(request, 'profile.html', {'user_profile': user_profile})
+
+def upload_profile_pic(request):
+    if request.method == 'POST':
+        user_profile = UserProfile.objects.get(user=request.user)
+        user_profile.profile_picture = request.FILES['profile_pic']
+        user_profile.save()
+    return redirect('profile')
+
+
+def jamb(request):
+    return render(request, "jamb.html")

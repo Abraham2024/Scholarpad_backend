@@ -1,0 +1,227 @@
+{% load static %}
+
+<html> 
+  <!-- Head section holds info for the browser. --> 
+  
+  <head> 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7249372971076788" 
+      crossorigin="anonymous"></script> 
+    <!-- Google tag (gtag.js) --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2HCC9GCJB"></script> 
+    <script> 
+      window.dataLayer = window.dataLayer || []; 
+  
+      function gtag() { 
+        dataLayer.push(arguments); 
+      } 
+      gtag('js', new Date()); 
+  
+      gtag('config', 'G-X2HCC9GCJB'); 
+    </script> 
+    <title>Scholarpad</title> 
+    <link rel="stylesheet" href="{% static 'assets/css/sss.css' %}" type="text/css"> 
+    <link rel="stylesheet" href="{% static 'intro.css' %}" type="text/css"> 
+  
+    <!-- Info for the browser to decode our HTML code. --> 
+    <meta charset="utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  
+    <!-- Bootstrap files --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> 
+    </script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> 
+    </script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> 
+    </script> 
+  </head> 
+  <!-- Body holds the content of the page. --> 
+  
+  <body> 
+  
+    <div class="sticky-top"> 
+      <!-- Navbar --> 
+      <nav class="navbar navbar-expand-md navbar-light bg-light"> 
+        <a class="navbar-brand" href="#home"> 
+          <img class="logo" src="/images/20230828_221905_0000.png" width="35" height="35"> 
+          <span class="align-text-center">Scholarpad</span> 
+        </a> 
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"> 
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+  
+        <!-- Navbar links --> 
+        <div class="collapse navbar-collapse" id="nav"> 
+          <ul class="nav navbar-nav ml-auto"> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="index.html"></a> 
+            </li> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="#change">Back to top</a> 
+            </li> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="quiz.html"> Quiz </a> 
+            </li> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="https://wa.me/09054525949?text=good day my name is " 
+                data-action="send message">Chat a tutor</a> 
+            </li> 
+  
+            <li class="nav-item"> 
+              <a class="nav-link" href="/">Return to Home</a> 
+            </li> 
+          </ul> 
+        </div> 
+      </nav> 
+    </div> 
+    <style> 
+      .float { 
+        text-align: center; 
+        margin-bottom: 20px; 
+      } 
+  
+      .none { 
+        font-size: 1.2rem; 
+        color: #000000; 
+        font-weight: bold; 
+      } 
+  
+      .subjects { 
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+      } 
+  
+      .subjects li { 
+        margin-bottom: 10px; 
+        text-align: center; 
+      } 
+  
+      .button { 
+        display: flex; 
+        justify-content: flex-start; 
+        text-decoration: none; 
+        transition: background-color 0.3s ease; 
+      } 
+  
+      .button>p { 
+        text-transform: none; 
+      } 
+  
+      footer { 
+        margin-top: 30px; 
+        text-align: center; 
+      } 
+  
+      footer p { 
+        margin: 5px 0; 
+        font-size: 0.9rem; 
+        color: #777777; 
+      } 
+  
+      .home { 
+        margin-top: 30px; 
+        text-align: center; 
+      } 
+  
+      .home a { 
+        text-decoration: none; 
+        color: #000000; 
+        font-weight: bold; 
+      } 
+  
+      @media screen and (min-width: 768px) { 
+  
+        .sub, 
+        .button>p>span { 
+          font-size: 18px; 
+        } 
+  
+        .sub { 
+          padding: 0 20px; 
+        } 
+      } 
+    </style> 
+    </head> 
+    <div class="same"> 
+      <div class="overlay overlaydiff" aria-hidden="true"></div> 
+    </div> 
+  
+    <body class="date"> 
+      <div class="float"> 
+        <marquee class="none" style="color: #333333;">Select a subject to take the quiz</marquee> 
+      </div> 
+      <article class="sub"> 
+       <h3>JAMB COMBOS</h3> 
+        <a id="change"> 
+          <ol class="subjects"> 
+            <li> 
+              <a href="/combo" class="button"> 
+                <img class="img1" src="/images/c-one.jpg" alt="Combo jamb 1"> 
+                <h5>Combo jamb 1 </h5> 
+                <p>This combo contains <span>140 questions</span> from Chemistry, Biology, 
+                  Physics and Mathematics! <span>Try it out!!</span></p> 
+              </a> 
+            </li> 
+        </a> 
+        <li><a href="combo2.html" class="button"> 
+            <img class="img1" src="/images/c-two.jpg" alt="Combo jamb 2"> 
+            <h5>Combo jamb 2 </h5> 
+            <p>This combo contains <span>154 questions</span> from Chemistry, Biology, 
+              Physics and Mathematics! <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+        <li><a href="combo3.html" class="button"> 
+            <img class="img1" src="/images/c-three.jpg" alt="Combo jamb 3"> 
+            <h5> Combo jamb 3 </h5> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+        <li><a href="combo4.html" class="button"> 
+            <img class="img1" src="/images/c-four.jpg" alt="Combo jamb 4"> 
+            <h5>Combo jamb 4 </h5> 
+            <p>This combo allows you to select your section be it Art, Social Science or Science! 
+              <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+        <li><a href="combo5.html" class="button"> 
+            <img class="img1" src="/images/c-five.jpg" alt="Combo jamb 5"> 
+            <h5>Combo jamb 5 </h5> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+        <li><a href="combo6.html" class="button"> 
+            <img class="img1" src="/images/c-six.jpg" alt="Combo jamb 6"> 
+            <h5>Combo jamb 6 </h5> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+        <li><a href="combo7.html" class="button"> 
+            <img class="img1" src="/images/c-seven.jpg" alt="Combo jamb 7"> 
+            <h5>Combo jamb 7 </h5> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+        <li><a href="combo8.html" class="button"> 
+            <img class="img1" src="/images/c-eight.jpg" alt="Combo jamb 8"> 
+            <h5>Combo jamb 8 </h5> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              <span>Try it out!!</span></p> 
+          </a> 
+        </li> 
+  
+        </ol> 
+  
+    </body> 
+  
+  </html>

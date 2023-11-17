@@ -716,7 +716,8 @@
           index = 0,  
           name = "",  
           answer = [],  
-          times;  
+          times;
+          selectedQuizId;
   
   
         $(document).ready(function() {  
@@ -830,6 +831,26 @@
         }  
   
         function showResult() {  
+	// Send user data to the backend
+    const userData = {
+        name: name,
+        score: scores,
+        quizId: selectedQuizId,
+        date: today
+    };
+	$.ajax({
+        type: "POST",
+        url: `/save_user_score/${selectedQuizId}/`, // Update with your Django backend endpoint, including the quiz identifier
+        data: JSON.stringify(userData),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+            console.log("User score saved successfully");
+        },
+        error: function (error) {
+            console.error("Error saving user score:", error);
+        }
+    });
           $(".sec3").fadeOut();  
           $(".sec4").fadeIn();  
           $("#name").text(name);  
@@ -837,7 +858,8 @@
           const scores = Math.round(score / ques.length * 100);  
           const grt = scores < 25 ? "Nice" : scores < 50 ? "Good" : scores < 76 ? "Very Good" : "Excellent";  
           $("#score").text("Score : " + scores + "%");  
-          $("#id").text("Test Id : " + Math.ceil(Math.random() * 20000));  
+          $("#id").text("Test Id : " + Math.ceil(Math.random() * 20000)); 
+          selectedQuizId = "combo";
           let date = new Date();  
           let today = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();  
           $("#date").text(today);  
@@ -847,7 +869,7 @@
         function showYourAns() {  
           $(".ans-list").html("");  
           $(".sc").text(score + "/" + ques.length);  
-  
+          
           ques.forEach((que, i) => {  
             const li = document.createElement("li");  
             const p = document.createElement("p");  

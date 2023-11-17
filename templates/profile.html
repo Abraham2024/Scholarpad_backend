@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Welcome, {{ user_profile.first_name }} {{ user_profile.last_name }}!</h1>
+
+    <!-- Display user details -->
+    <p>First Name: {{ user_profile.first_name }}</p>
+    <p>Last Name: {{ user_profile.last_name }}</p>
+    <p>Phone Number: {{ user_profile.phone_number }}</p>
+
+    <!-- Form for uploading profile picture -->
+    <form method="post" enctype="multipart/form-data" action="{% url 'upload_profile_pic' %}">
+        {% csrf_token %}
+        <label for="profile_pic">Upload Profile Picture:</label>
+        <input type="file" name="profile_pic" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Display current profile picture if available -->
+    {% if user_profile.profile_picture %}
+        <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+    {% else %}
+        <p>No profile picture available.</p>
+    {% endif %}
+</body>
+</html>
+

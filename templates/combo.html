@@ -1,0 +1,173 @@
+{% load static %}
+<html>  
+  <!-- Head section holds info for the browser. -->  
+  
+  <head>  
+    <!-- Our page's title and custom styling file. -->  
+    <title>Sample Page</title>  
+    <link rel="stylesheet" href="{% static 'assets/css/sss.css' %}" type="text/css">  
+    <link rel="stylesheet" href="{% static 'assets/css/intro.css' %}">  
+  
+    <!-- Info for the browser to decode our HTML code. -->  
+    <meta charset="utf-8" />  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+  
+    <!-- Bootstrap files -->  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <script type="text/javascript" async 
+         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> 
+ </script> 
+  
+  </head>  
+  <!-- Body holds the content of the page. -->  
+  
+  <body>  
+  
+    <div class="sticky-top">  
+      <!-- Navbar -->  
+      <nav class="navbar navbar-expand-md navbar-light bg-light justify-content-center">  
+        <a class="navbar-brand d-flex w-50 mr-auto" href="#home">Scholarpad</a>  
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">  
+          <span class="navbar-toggler-icon"></span>  
+        </button>  
+  
+        <!-- Navbar links -->  
+        <div class="collapse navbar-collapse" id="nav">  
+          <ul class="nav navbar-nav mr-auto justify-content-end">  
+            <li class="nav-item">  
+              <a class="nav-link" href="index.html"></a>  
+            </li>  
+  
+            <li class="nav-item" id="grav">  
+              <a class="nav-link" id="grav" href="#units">Units and Measurements</a>  
+            </li>  
+  
+            <li class="nav-item">  
+              <a class="nav-link" href="index.html">Return to Homepage</a>  
+            </li>  
+          </ul>  
+        </div>  
+      </nav>  
+    </div>  
+    </section>  
+    <section class="section">  
+      <section class="sec1">  
+        <div>  
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTYbCNJQUfl4xzwdfgyVff-isMo2F6LzZUeJA&usqp" alt="">  
+        </div>  
+        <div>  
+          <h3>Combo Jamb quiz </h3>  
+          <p>Level: Easy  
+          </p>  
+          <p> It's time to prove yourself</p>  
+          <button class="btn btn1 continue-btn">Continue</button>  
+        </div>  
+      </section>  
+      <!-- Abraham -->  
+      <section class="sec2">  
+        <div>  
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwmqylT3hlUqqVnku_VbEJzd_x4aur7IvOHg&usqp=CAU" alt="">  
+        </div>  
+        <p> This quiz consists of questions from chemistry, biology, physics and mathematics </p>  
+        <div>  
+          <input type="text" class="input" placeholder="Enter Your Name" minlength="5" maxlength="50">  
+        </div>  
+        <button class="btn btn1 start-quiz">Start Quiz</button>  
+      </section>  
+  
+              <section class="sec3">  
+        <div class="box">  
+          <div class="box__header">  
+            <button id="show-calculator-button" onclick="toggleCalculator()">Use Calculator</button>  
+            <div class="index">1/10</div>  
+            <div class="toast"></div>  
+            <div class="time">00:01</div>  
+          </div>  
+          <div class="calc-container">  
+            <div class="calculator">  
+              <form name="calc">  
+                <h3 class="day">Calculator 3.0</h3>  
+                <input type="text" id="answer" name="display" readonly>  
+                <div class="button2">  
+                  <input type="button" value="Clear" class="sign" onclick="Clear()">  
+                  <input type="button" value="√" class="sign3" onclick="sqrt()">  
+                  <input type="button" value="←" class="sign2" onclick="Return()">  
+                  <input type="button" value="÷" class="sign2" onclick="calc.display.value+= '/'">  
+                  <input type="button" value="7" class="no" onclick="calc.display.value+= '7'">  
+                  <input type="button" value="8" class="no" onclick="calc.display.value+= '8'">  
+                  <input type="button" value="9" class="no" onclick="calc.display.value+= '9'">  
+                  <input type="button" value="x" class="sign2" onclick="calc.display.value+= '*'">  
+                  <input type="button" value="4" class="no" onclick="calc.display.value+= '4'">  
+                  <input type="button" value="5" class="no" onclick="calc.display.value+= '5'">  
+                  <input type="button" value="6" class="no" onclick="calc.display.value+= '6'">  
+                  <input type="button" value="-" class="sign2" onclick="calc.display.value+= '-'">  
+                  <input type="button" value="1" class="no" onclick="calc.display.value+= '1'">  
+                  <input type="button" value="2" class="no" onclick="calc.display.value+= '2'">  
+                  <input type="button" value="3" class="no" onclick="calc.display.value+= '3'">  
+                  <input type="button" value="+" class="sign2" onclick="calc.display.value+= '+'">  
+                  <input type="button" value="(" class="sign3" onclick="calc.display.value+= '('">  
+                  <input type="button" value=")" class="sign3" onclick="calc.display.value+= ')'">  
+                  <input type="button" value="%" class="sign2" onclick="percent()">  
+                  <input type="button" value="x³" class="sign3" onclick="cube()">  
+                  <input type="button" value="x²" class="sign3" onclick="Sq()">  
+                  <input type="button" value="0" class="no onclick=" calc.display.value+='0'">  
+                  <input type=" button" value="." class="sign3" onclick="calc.display.value+= '.'">  
+                  <input type="button" value="=" class="sign" onclick="Result()">  
+                </div>  
+            </div>  
+            </form>  
+          </div>  
+          <h3 class="question"></h3>  
+          <ul class="quiz">  
+          </ul>  
+          <button class="submit">Continue</button>  
+        </div>  
+      </section>  
+      <!-- Abraham-->  
+      <section class="sec4">  
+        <div class="des">  
+          <h3 class="mb-1 name">Itech</h3>  
+          <p class="mb-1">Congratulations you did a great job!🎉🎉 <br> you have unlocked a new certificate </p>  
+  
+        </div>  
+        <button class="check-ans btn">Check for correct Answers</button>  
+        <h3> Your Certificate</h3>  
+        <div class="certificate">  
+          <h4> Jamb Combo1</h4>  
+          <p id="name">Itech</p>  
+          <p id="score">Score: 50%</p>  
+          <small id="id">Test Id : 737373</small>  
+          <small id="date">7-5-2020</small>  
+          <small class="sin">Scholarpad</small>  
+        </div>  
+        <h1 class="great">Excellent</h1>  
+      </section>  
+      <section class="sec5">  
+        <div class="flex">  
+          <h2>Right answers </h2>  
+          <h2 class="sc"></h2>  
+        </div>  
+        <p class="mb-1"> These are the correct answers</p>  
+        <ul class="ans-list">  
+        </ul>  
+        <button class="btn back-btn">Back</button>  
+      </section>  
+      <script type="text/x-mathjax-config"> 
+   MathJax.Hub.Config({ 
+     tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$']]}, 
+     displayAlign: 'center', 
+     displayIndent: '0' 
+   }); 
+ </script> 
+  
+      <script src="{% static 'assets/js/combo1.js' %}"</script>  
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  
+  </body>  
+  </html>

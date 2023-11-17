@@ -11,3 +11,15 @@ class UserProfile(models.Model):
 class Feature(models.Model):
      name =  models.CharField(max_length=100)
      details = models.CharField(max_length=500)
+
+
+class Quiz(models.Model):
+    identifier = models.CharField(max_length=255, unique=True)
+    # Add other fields specific to your Quiz model
+
+class UserScore(models.Model):
+    name = models.CharField(max_length=255)
+    score = models.IntegerField()
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    date = models.DateField()
+
