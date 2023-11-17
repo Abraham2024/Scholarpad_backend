@@ -716,7 +716,7 @@
           index = 0,  
           name = "",  
           answer = [],  
-          times;
+          times,
           selectedQuizId;
   
   
