@@ -1,4 +1,18 @@
-const ques = [
+$.ajax({
+    type: "POST",
+    url: `/save_user_score/${selectedQuizId}/`,
+    headers: { "X-CSRFToken": getCookie("csrftoken") },  // Include the CSRF token
+    data: JSON.stringify(userData),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (response) {
+        console.log("User score saved successfully");
+    },
+    error: function (error) {
+        console.error("Error saving user score:", error);
+    }
+});
+ ques = [
   {
     que: "If 2257 is the result of subtracting 4577 from 7056 in base n, find n",
     option: ["8", "9", "10", "11"],
@@ -142,19 +156,9 @@ let today = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth
 
 
   selectedQuizId = "combo"; // or assign the appropriate value based on your application logic  
-  $.ajax({
-    type: "POST",
-    url: `/save_user_score/${selectedQuizId}/`, // Update with your Django backend endpoint, including the quiz identifier   
-    data: JSON.stringify(userData),
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-    success: function(response) {
-      console.log("User score saved successfully");
-    },
-    error: function(error) {
-      console.error("Error saving user score:", error);
-    }
-  });
+  
+
+
   $(".sec3").fadeOut();
   $(".sec4").fadeIn();
   $("#name").text(name);
