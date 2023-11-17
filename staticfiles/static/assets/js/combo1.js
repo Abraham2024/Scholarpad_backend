@@ -129,6 +129,11 @@ function showIndex() {
 }
 
 
+function getCookie(name) {
+    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return cookieValue ? cookieValue.pop() : '';
+  }
+ 
 function showResult() {
   const Scores = Math.round(score / ques.length * 100); // Move the definition above its usage
 let date = new Date();
