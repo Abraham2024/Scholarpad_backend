@@ -19,6 +19,54 @@
    overflow-x: hidden; 
  } 
   
+  
+ .chat-link, 
+ .login-link { 
+   color: black !important; 
+   font-weight: 500 !important; 
+ } 
+  
+ .navbar-light .navbar-nav .nav-link:hover { 
+   color: goldenrod !important; 
+ } 
+  
+ .navbar-nav { 
+   width: 100%; 
+ } 
+  
+ /*For nav bar icon*/ 
+ .navbar-toggler { 
+   font-size: 1.38rem !important; 
+ } 
+  
+ .navbar-toggler>.close-icon { 
+   display: block !important; 
+   width: 1.7em !important; 
+   height: 1.8em !important; 
+   background: no-repeat center center !important; 
+   background-size: 100% 100% !important; 
+   background-image: url("/images/close.png") !important; 
+   color: black !important; 
+ } 
+  
+ .navbar-toggler.collapsed>.close-icon, 
+ .navbar-toggler:not(.collapsed)>.navbar-toggler-icon { 
+   display: none !important; 
+ } 
+  
+ .navbar-light .navbar-toggler-icon { 
+   background-image: url("/images/open.png") !important; 
+ } 
+  
+ .navbar-light .navbar-toggler { 
+   border: none !important; 
+   color: black !important; 
+ } 
+  
+ .navbar-light .navbar-toggler:focus { 
+   outline: none !important; 
+ } 
+  
  /* hover effects */ 
  h5:hover, 
  p:hover { 
@@ -32,7 +80,7 @@
  } 
   
  /* adding animations on reveal */ 
- .reveal {   
+ .reveal { 
    opacity: 0; 
    transition: all 2s; 
  } 
@@ -62,7 +110,7 @@
      width: 25%; 
    } 
  } 
-    
+  
  .reveal.visible>div { 
    animation: anime6 2s; 
  } 
@@ -310,50 +358,9 @@
  marquee { 
    color: red; 
  } 
- #preloader {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   z-index: 9999;
-   overflow: hidden;
-   background: #fff;
- }
-
- #preloader:before {
-   content: "";
-   position: fixed;
-   top: calc(50% - 30px);
-   left: calc(50% - 30px);
-   border: 6px solid #5fcf80;
-   border-top-color: #fff;
-   border-bottom-color: #fff;
-   border-radius: 50%;
-   width: 60px;
-   height: 60px;
-   animation: animate-preloader 1s linear infinite;
- }
-
- @keyframes animate-preloader {
-   0% {
-     transform: rotate(0deg);
-   }
-
-   100% {
-     transform: rotate(360deg);
-   }
- }
-
- @media screen and (max-width: 768px) {
-   [data-aos-delay] {
-     transition-delay: 0 !important;
-   }
- }
-
   
  #contact { 
-   background-image: url("../images/Pic.jpeg"); 
+   background-image: url("/images/images (48).jpeg"); 
    width: inherit; 
    height: 250px; 
    background-size: cover; 
@@ -497,7 +504,7 @@
  .button1 { 
    margin-left: 40px; 
  } 
-   
+  
  .check { 
    color: goldenrod; 
    font-weight: large; 
@@ -526,7 +533,7 @@
  } 
   
  .html { 
-   background-image: url("assets/images/images (23).jpeg"); 
+   background-image: url("/images/images (23).jpeg"); 
    color: white; 
    height: 80px; 
    width: 40%; 
@@ -599,6 +606,15 @@
    height: 350px; 
    margin-bottom: 80px; 
    box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
+   cursor: pointer; 
+ } 
+  
+ .flex2:hover { 
+   transform-style: preserve-3d; 
+   /* Required */ 
+   transform-origin: center center; 
+   transform: perspective(400px) translateZ(20px); 
+   transition: 0.3s transform ease-in-out; 
  } 
   
  .flex2>h5 { 
@@ -913,7 +929,7 @@
  } 
   
  #subjects { 
-   background-image: url("assets/images/page.jpg"); 
+   background-image: url("images/page.jpg"); 
    height: 250px; 
    background-size: cover; 
  } 
@@ -922,7 +938,7 @@
    position: fixed; 
    bottom: 0; 
    width: 100%; 
-   z-index: 2;
+   z-index: 2; 
  } 
   
  .footer>div { 
@@ -973,7 +989,7 @@
    } 
   
    #contact { 
-     background-image: url("assets/images/images (49).jpeg"); 
+     background-image: url("/images/images (49).jpeg"); 
      height: 400px; 
    } 
   
@@ -994,6 +1010,20 @@
  } 
   
  @media screen and (min-width: 768px) { 
+   .login { 
+     margin-left: 5px; 
+     background-color: transparent; 
+     border: 1.9px solid goldenrod !important; 
+     border-radius: 25px; 
+     padding: 6px 5px 2px 5px !important; 
+   } 
+  
+   .login-link { 
+     padding: 0px 5px 0px 5px !important; 
+     margin-bottom: 0px !important; 
+     text-align: center !important; 
+   } 
+  
    hr { 
      width: 35%; 
    } 
@@ -1154,6 +1184,19 @@
  } 
   
  @media screen and (min-width: 1024px) { 
+   .chat-link { 
+     margin-right: 20px; 
+     margin-left: 20px; 
+   } 
+  
+   .login { 
+     margin-left: 20px; 
+   } 
+  
+   .login-link { 
+     padding: 0px 8px 0px 8px !important; 
+   } 
+  
    hr { 
      width: 40%; 
    } 
