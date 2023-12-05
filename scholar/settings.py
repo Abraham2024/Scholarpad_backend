@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'scholar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+      #  'ENGINE': 'django.db.backends.sqlite3',
+       # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ee62C5aGB25d2dbe*CCb*fec5dCd5FbF',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '40348',
     }
 }
 
