@@ -1,47 +1,70 @@
-{% load static %} 
- <!DOCTYPE html>  
-  <html lang="en">  
+{% load static %}  
+<!DOCTYPE html>   
+<html lang="en">   
+<head>   
+    <meta charset="UTF-8">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Scholarpad</title>   
+    <link href="{% static 'assets/css/form.css' %}" rel="stylesheet">
+</head>   
+     
   
-  <head>  
-      <meta charset="UTF-8">  
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-      <title>Document</title>  
-      <link href="{% static 'assets/css/form.css' %}" rel="stylesheet"> 
-  </head>  
+    </head> 
+    <!-- Body holds the content of the page. --> 
   
-  <body>  
-      <div class="loginwrap">  
-          <div class="login"> 
-                  {% for message in messages %} 
-                  <h5>{{message}}</h5> 
-                  {% endfor %} 
-              <h1 class="log"> sign up <span class = "text"> here </span></h1>  
-              <form method = "POST" action="signup">  
-                      {% csrf_token %}
-		      <label for="first_name">First Name*</label>
-        <input type="text" id = "name" placeholder = "John" name="first_name" required>
-        <label for="last_name">Last Name*</label>
-        <input type="text" id = "name" placeholder = "Smith"  name="last_name" required>
-                  <label for "username"> Username*</label>  
-                  <input type - "text" id = "username" name="username" placeholder='john' required>  
-                  <label for "email">Email*</label>  
-                  <input type="email" id = "email" name="email" placeholder="abc@mail.com" required>
-		  <label for="phone_number">Phone number*</label>
-        <input type="number" name="phone_number" id = "name" placeholder = "+234 xxxxxxxx " required>
-         <label for="state">State* </label>
-        <input type="text" name="state" id = "name" placeholder = "Edo" required>
-        
-                  <label for "password">Password* </label>  
-                  <input type="password" id = "password"  name="password" placeholder="****" required>  
-                  <label for "password"> Confirm Password</label>  
-                  <input type="password" id = "password2" name="password2" placeholder="*****" required>  
-                  <button class = "loginbtn">sign up </button>  
-              </form>  
-              <p> Already have an account? <a href = "login"> Login in here </a> </p>  
-          </div>  
-      </div>
-      <script src = "{% static 'assets/js/index.js' %}"></script>
-  </body>  
+    <body> 
+      <div id="preloader"></div> 
+      <marquee> Dear esteemed users please note that we are trying to fix all glitches as regards user login please bear with us.... Wishing you a merry Christmas and prosperous new year in advance </marquee> 
+    <div class="loginwrap">   
+        <div class="login">  
+            {% for message in messages %}  
+            <h5>{{message}}</h5>  
+            {% endfor %}  
+            <h1 class="log"> sign up <span class="text"> here </span></h1>   
+            <form method="POST" action="signup">   
+                {% csrf_token %} 
+                <label for="first_name">First Name*</label> 
+                <input type="text" id="name" placeholder="John" name="first_name" required> 
+                <label for="last_name">Last Name*</label> 
+                <input type="text" id="name" placeholder="Smith" name="last_name" required> 
+                <label for="username">Username*</label>   
+                <input type="text" id="username" name="username" placeholder="john" required>   
+                <label for="email">Email*</label>   
+                <input type="email" id="email" name="email" placeholder="abc@mail.com" required> 
+                <label for="phone_number">Phone number*</label> 
+                <input type="number" name="phone_number" id="name" placeholder="+234 xxxxxxxx" required> 
+                <label for="state">State*</label> 
+                <input type="text" name="state" id="name" placeholder="Edo" required> 
   
-  </html>
+                <label for="password">Enter password*</label>
+                <input type="password" id="password" name="password" placeholder="****" required>
+		
+                <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+		<br> <br> 
+                <label for="password2">Confirm Password*</label>
+                <input type="password" id="password2" name="password2" placeholder="*****" required>
+                
+
+                <button class="loginbtn">sign up </button>   
+            </form>   
+            <p> Already have an account? <a href="login"> Login in here </a> </p>   
+        </div>   
+    </div> 
+    <script src="{% static 'assets/js/index.js' %}"></script> 
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var password2Input = document.getElementById("password2");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                password2Input.type = "text";
+            } else {
+                passwordInput.type = "password";
+                password2Input.type = "password";
+            }
+        }
+    </script>
+</body>   
+</html>
