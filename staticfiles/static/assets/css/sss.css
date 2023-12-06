@@ -1,1151 +1,1718 @@
- html {
-   scroll-behavior: smooth;
-   user-select: none;
-   -ms-user-select: none;
-   -webkit-user-select: none;
-   font-size: 18px;
-   font-weight: 500;
-   opacity: 1;
-   line-height: 15px;
- }
- body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
- small{
-   font-size: 1px;
- }
-/* calculator.css */
-
-/* calculator.css */
-.calc-container{
-  max-width: 90%;
-  overflow-x: auto;
-}
-/* calculator.css */
-
-.calculator {
-    display: none;
-    width: 280px; /* Adjust the width to make it smaller */
-    border: 2px solid #ccc;
-    padding: 10px;
-    margin: 20px auto;
-    border-radius: 50px;
-}
-
-.calculator input[type="text"] {
-    width: 80%;
-    padding: 5px;
-    margin-bottom: 10px;
-    font-size: 14px; /* Reduce the font size for a smaller input field */
-}
-
-.calculator .button {
+html {  
+     scroll-behavior: smooth;  
+     user-select: none;  
+     -ms-user-select: none;  
+     -webkit-user-select: none;  
+     font-size: 18px;  
+     font-weight: 500;  
+     opacity: 1;  
+     line-height: 15px;  
+   }  
   
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.calculator .button input[type="button"] {
-
-    padding: 12px; /* Reduce button padding */
-    font-size: 14px; /* Reduce the font size for smaller buttons */
-    background: #ccc;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.calculator .button input[type="button"]:hover {
-    background: #ddd;
-}
-
- b {
-   color: red;
- }
-
- .fraction {
-   font-size: 25px;
- }
-
- .periodic {
-   background-image: url("/images/images (30).jpeg");
-   background-size: 100%;
-   height: 230px;
- }
-
- .p {
-   margin-right: 5px
- }
-
- .a {
-   color: white;
- }
-
- .notification {
-   position: fixed;
-   bottom: 20;
-   left: -300px;
-   /* Initial position, hidden */
-   transform: translateX(0);
-   background-color: transparent;
-   padding: 10px;
-   color: black;
-   border: 1px solid #ccc;
-   border-radius: 5px;
-   z-index: 1000;
-   width: 300px;
-   /* Initial width */
-   transition: left 0.3s, width 0.3s, transform 0.3s;
- }
-
- .none {
-   display: none;
- }
-
- li {
-   margin-bottom: 10px;
- }
-
- .notification.expanded {
-   left: 0;
-   /* Displayed position */
-   width: 40%;
-   /* Expanded width */
-   transform: translateX(0);
- }
-
- .notification-toggle {
-   position: fixed;
-   bottom: 10px;
-   left: 10px;
-   height: 30px;
-   background-color: transparent;
-   color: white;
-   padding: 5px 10px;
-   border-radius: 5px;
-   cursor: pointer;
-   z-index: 1001;
- }
-
- /* for number base */
- .from {
-   margin-top: 10px;
- }
-
- .redm {
-   color: red;
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- }
-
- /* Color the background and add some space to the sides of the main column. */
- .container-fluid {
-   background-color: #F8B003;
-   /* We use !important to override the padding setting that Bootstrap already put for the container-fluid class. */
-   padding-left: 10% !important;
-   padding-right: 10% !important;
- }
-
- /* Color the main column background white. */
- .col {
-   background-color: white;
- }
-
-.logo {
-  border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);
-  margin-top: -5px;
-}
-
- .root {
-   text-decoration: overline;
- }
-
- .row.section {
-   padding: 5%;
- }
-
- .navbar {
-   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);
- }
-
- /* Bold the navbar's brand and put spacing on its left so it shifts right. */
- .navbar-brand {
-   font-weight: bold;
-   color: indianred;
- }
-
- .surd {
-   background-image: url("/images/surd.png");
-   background-size: 100%;
-   height: 200px;
-   background-repeat: no-repeat;
- }
-
- .base {
-   background-image: url("/images/images (58).jpeg");
-   background-size: 100%;
-   height: 190px;
- }
- .quantify{
-   background-image: url("/images/quality.jpeg");
-   background-size: 100%;
-   height:190px;
- }
- .same{
-   background-image: url("/images/images (59).jpeg");
-   background-size: 100%;
-   height: 250px;
- }
- .sets{
-   background-image: url("/images/images (14).png");
-   background-size: 100%;
-   height: 345px;
- }
- #home {
-   padding: 20%;
-   background-image: url("media/pavement.jpg");
-   background-size: cover;
-
- }
-
- .example {
-   font-size: 20px;
- }
-
- /* for numerator */
- .num {
-   text-decoration: underline;
- }
-
- .den {
-   margin-left: 15px;
- }
-
- .den1 {
-   margin-left: 35px;
- }
-
- .den2 {
-   margin-left: 48px;
- }
-
- .den3 {
-   margin-left: -5px;
- }
-
- .den4 {
-   margin-left: 40px;
- }
-
- .num1 {
-   margin-left: 10px;
-   text-decoration: underline;
- }
-
- .equal {
-   margin-left: 10px;
- }
-
- .iframe {
-   width: 100%;
-   height: 250px;
- }
-
- .maths {
-   font-size: 23px;
-   opacity: 1;
-   width: 100%;
-   background-size: 100%;
- }
-
- .iframer {
-   width: 100%;
-   height: 80%;
- }
-
- #contact {
-   background-image: url("images/Term_1.jepg");
-   height: 350px;
-   background-size: cover;
-   background-repeat: no-repeat;
- }
-
- .button {
-   display: flex;
-   flex-direction: column;
- }
-
- .pict {
-   background-image: url("/images/measure.jpeg");
-   background-size: cover;
-   height: 250px;
-   background-repeat: no-repeat;
- }
-
- .chem-properties {
-   background-image: url("/images/images (2).png");
-   background-size: 100%;
-   height: 36%;
-   background-repeat: no-repeat;
- }
-
- .elements {
-   background-image: url("/images/classification.png");
-   background-size: 100%;
-   background-repeat: no-repeat;
-   height: 250px;
- }
-
- .one {
-   float: left;
- }
-
- .period {
-   background-image: url("/images/metalloids.png");
-   background-size: 100%;
-   background-repeat: no-repeat;
-   height: 200px;
- }
-
- #ul {
-   color: red;
- }
-
- .table-container {
-   max-width: 1000px;
-
-   overflow-x: auto;
-
- }
-
- .table {
-   width: 100%;
- }
-
- .schemer {
-   background-image: url("/images/physics.jpeg");
-   background-size: 100%;
-   height: 250px;
- }
-
- .overdate {
-   width: 100%;
-   overflow: auto;
- }
-
- th,
- td {
-   border: 1px solid black;
-   width: 50%;
- }
-
- .pic {
-   background-image: url("/images/ss1-physics-first.jpeg");
-   background-size: cover;
-   height: 250px;
- }
-
- .def {
-   background-color: skyblue;
-   text-align: center;
-   width: 65%;
- }
-
- /* style for overline */
- .overline {
-   text-decoration: overline;
-   color: black;
-
- }
-
- .numera {
-   text-decoration: underline;
- }
-
- .deno {
-
-   margin-left: 35px;
- }
-
- .numerator {
-   margin-left: 5px;
- }
-
- .denit {
-   margin-left: 80;
- }
-
- .video {
-   width: 100%;
-   height: 350px;
- }
-
- .buti {
-   position: fixed;
-   bottom: 10%;
-   background-color: transparent;
-   color: red;
- }
-
- .space {
-   margin-left: 20px;
- }
-
- .dentist {
-   margin-left: 136px;
-   text-decoration: overline;
- }
-
- .don {
-   margin-left: 150px;
- }
-
- .smaller {
-   font-size: 18px;
- }
-
- .dont {
-   margin-left: 90px;
- }
-
- .pinky {
-   margin-left: 20px;
- }
-
- .device {
-   margin-left: 25px;
- }
-
- .denot {
-   margin-left: 50px;
- }
-
- .simplify {
-   margin-left: 80px;
- }
-
- .maths-pics {
-   width: 100%;
- }
-
- .but {
-   display: block;
-   width: 100%;
-   padding: 10px;
-   margin: 0;
-   background-color: #4CAF50;
-   color: #fff;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
- }
-
- a {
-   text-decoration: none;
- }
-
- .ex {
-   background-image: url("images/Example1.jpeg");
-   height: 180px;
-   background-size: cover;
-
- }
-
- .ex2 {
-   background-image: url("/images/Example2.png");
-   height: 180px;
-   background-size: cover;
- }
-
- .ex3 {
-   background-image: url("/images/392528.jpeg");
-   height: 180px;
-   background-size: cover;
- }
-
- .solution {
-   color: red;
-   text-decoration: underline;
-   text-align: center;
-   justify-content: center;
-   align-items: center;
-   text-transform: capitalize;
-   font-weight: bolder;
- }
-
- .mi {
-   background-image: url("/images/micrometer.png");
-   background-size: cover;
-   height: 250px;
- }
-
- .mi2 {
-   background-image: url("/images/micro2.png");
-   background-size: cover;
-   height: 350px;
- }
-
- .null {
-   color: white;
- }
-
- #container {
-   max-width: 400px;
-   margin: 30px auto;
-   background-color: #fff;
-   padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
- }
-
- input {
-   width: 100%;
- }
-
- .mi3 {
-   background-image: url("/images/ocrom.jpeg");
-   background-size: cover;
-   height: 250px;
- }
-
- .defi {
-   background-color: skyblue;
-   text-align: center;
-   width: 93%;
- }
-
- .buton {
-   display: flex;
-   flex-direction: row;
-   width: 100%;
- }
-
- #pic {
-   background-size: cover;
-   height: 250px;
-   background-image: url("images/ss1-physics.jpeg");
-
- }
-
- .button1 {
-   margin-left: 40px;
- }
-
- #quote {
-   user-select: none;
-   -ms-user-select: none;
-   -webkit-user-select: none;
-   height: 150px;
-   background-color: black;
-   color: wheat;
-   justify-content: center;
-   align-content: center;
- }
-
- .sub {
-   font-size: 2rem;
-   color: #000000;
-   text-transform: uppercase;
-   margin-top: 30px;
-   text-align: center;
- }
-
- .subjects {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
- }
-
- .button {
-   display: inline-block;
-   padding: 12px 24px;
-   border: none;
-   border-radius: 6px;
-   background-color: #2196f3;
-   color: #ffffff;
-   font-size: 1.4rem;
-   text-decoration: none;
-   text-align: center;
-   transition: background-color 0.3s ease;
-   margin-bottom: 15px;
-   width: 300px;
-   max-width: 80%;
- }
-
- .overlay {
-  position: absolute;
-  background-color: black;
-  opacity: 50%;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
- #subjects {
-   background-image: url("images/Term_1.jpeg");
-   height: 250px;
-  background-size: cover;
-  position: relative;
- }
-
- #subjects>div {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  height: inherit;
-  position: absolute;
-}
-
- #subjects>div>h5 {
-  color: white;
-  font-size: 22px;
-  font-weight: 500;
-  align-self: center;
-  text-align: center;
-  text-transform: uppercase;
-}
-
- .defit {
-   width: 100%;
-   background-color: skyblue;
-   height: 30px;
-   text-align: center;
- }
-
- .button:hover {
-   background-color: #1565c0;
- }
-
- .define {
-   background-color: skyblue;
-   text-align: center;
-   width: 40%;
- }
-
- .chem {
-   background-image: url("/images/first-chem.jpeg");
-   height: 250px;
-   background-size: cover;
- }
-
- .definition {
-   background-color: skyblue;
-   text-align: center;
-   width: 100%;
-   height: 30px;
- }
-
- .chem-first {
-   background-image: url("/images/introduction-to-chemistry.jpeg");
-   background-size: cover;
-   height: 250px;
- }
-
- .center {
-   border-top: 0;
-   width: 3%;
-   margin-left: 6px;
-   text-align: center;
- }
-
- .center-last {
-   border-bottom: 0;
-   width: 3%;
-   text-align: center;
- }
-
- .lcm-last {
-   border-bottom: 0;
-   border-right: 0;
- }
-
- .chem-industry {
-   background-image: url("/images/images (52).jpeg");
-   background-size: cover;
-   height: 250px;
- }
-
- .atoms {
-   background-image: url("/images/images (53).jpeg");
-   background-size: cover;
-   height: 250px;
- }
-
- .maths-first {
-   background-image: url("/images/maths.jpeg");
-   background-size: cover;
-   height: 250px;
- }
-
- .p {
-   margin-left: 10px;
-   font-weight: 400;
-   margin-bottom: 10px;
- }
-
- .denk {
-   background-color: skyblue;
-   text-align: center;
-   width: 80%;
- }
-
- .button a {
-   color: #ffffff;
-   text-decoration: none;
- }
-
- .button:hover a {
-   color: #ffffff;
-   text-decoration: none;
- }
-
- #subjects1 {
-   background-image: url("/images/maths (1).jpeg");
-   height: 250px;
-   background-size: 100%;
-   background-repeat: no-repeat;
- }
-
- .physical-properties {
-   background-image: url("/images/Physical-Properties.jpg");
-   height: 70%;
-   background-size: 100%;
-   background-repeat: no-repeat;
- }
-
- .matter {
-   background-image: url("/images/matter.jpeg");
-   background-size: 100%;
-   height: 200px;
-   background-repeat: no-repeat;
- }
-
- .fractions {
-   font-size: 20px;
- }
-
- .tabler {
-   font-size: 30px;
-   font-weight: bold;
-   opacity: 1;
-   width: 22%;
-   height: 10%;
-   margin-left: 25%;
- }
- 
-  .binary {
-   font-size: 20px;
-   font-weight: bold;
-   opacity: 1;
-   width: 50%;
-   height: 10%;
-   margin-left: 25%;
- }
-
- .left {
-   text-align: right;
-   width: 3%;
-   letter-spacing: 3px;
-   padding: -1%;
-   border-left: 0;
-   border-top: 0;
- }
-
- .left-last {
-   text-align: right;
-   width: 2%;
-   border-bottom: 0;
-   border-left: 0;
- }
- .lefty{
-   text-align: right;
-   width: 30%;
-   border-bottom: 0;
-   border-left: 0;
- }
- .right {
-   text-align: left;
-   width: 1%;
-   border-right: 0;
-   border-top: 0;
- }
-  .spak{
-    margin-left: 34px;
-  }
- .vector {
-   background-image: url("/images/images (6).png");
-   background-size: 100%;
-   height: 200px;
- }
-
- .centered {
-   margin: 1px;
- }
-
- .right-last {
-   text-align: left;
-   width: 1%;
-   border-bottom: 0;
-   border-right: 0;
-
- }
-/* CSS for the question numbers container */
-.question-numbers-container {
-  background-color: #f0f0f0;
-  padding: 10px;
-  max-height: 20%;
-  overflow-y: auto;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-/* CSS for the question numbers */
-.question-numbers {
-  display: flex;
-  flex-wrap: wrap; /* Allow the numbers to wrap into multiple rows */
-  gap: 10px;
-}
-
-/* Style for individual question number links */
-.question-numbers a {
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: inline-block; /* Ensure each number is on its own line */
-  width: 30px; /* Set a fixed width to create rows of 10 */
-  text-align: center; /* Center the numbers within each circle */
-}
-
-/* Style for individual question number links on hover */
-.question-numbers a:hover {
+   body {  
+     width: 100%;  
+     margin: 0;  
+     padding: 0;  
+     overflow-x: hidden;  
+   }  
   
-}
-
- .mths-numbers {
-   background-image: url("/images/images (42).jpeg");
-   background-size: 100%;
-   height: 250px;
- }
- .strong{
-   font-size: 25px;
+   small {  
+     font-size: 1px;  
+   }  
   
- }
- .bi{
-   margin-left: 15%;
- }
- .di{
-   margin-left: 19%;
- }
- .bi2{
-   margin-left: 25%;
- }
- .picmen{
-   background-image: url("/images/images (57).jpeg");
-   background-size: 100%;
-   height: 300px;
- }
- .line{
-   text-decoration: underline overline;
-   margin-left: 20%;
- }
- .line3{
-   text-decoration: underline overline;
-   margin-left: 25%;
- }
- .liner{
-   text-decoration: overline;
-   margin-left: 20%
- }
- .liners{
-   text-decoration: underline;
-   margin-left: 12%;
-   border: 40%;
- }
- .di2{
-   margin-left: 25%;
- }
- .bar{
-   text-decoration: overline;
- }
- .line2{
-   text-decoration: underline overline;
-   margin-left: 31%;
- }
- .picture {
-   background-image: url("/images/images (29).jpeg");
-   background-size: 100%;
-   height: 200px;
- }
- .quest{
-   display: inline-flex;
- }
- .marquee-container{
-   max-width: 1000%;
-   overflow-x: hidden;
- }
- .jax{
-   margin-left: 5%;
- }
- #marquee {
-  animation: marquee 20s linear infinite;
-  width: 300%;
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
- .day{
-   margin-right: 10px;
- }
- .days{
-   margin-left: 25px;
- }
- .vector-container {
-   display: inline-block;
- }
- .rates{
-   background-image: url("/images/images (15).png");
-   background-size: 100%;
-   height: 340px;
- }
- 
- .stronger{
-   font-family: bolder;
-   font-size: 20px;
- }
-   .members {
-     background-image: url("/images/images (56).jpeg");
-     background-size: 100%;
-     height: 200px;
+   .navbar-light .navbar-nav .nav-link {  
+     font-size: 0.89rem !important;  
+     color: black !important;  
+     font-weight: 500 !important;  
+     margin-right: 10px !important;  
+   }  
+  
+   .navbar-light .navbar-nav .nav-link:hover {  
+     color: goldenrod !important;  
+   }  
+  
+   .navbar-brand {  
+     font-size: 1.085rem !important;  
+   }  
+  
+   /*For nav bar icon*/  
+   .navbar-toggler {  
+     font-size: 1.23rem !important;  
+   }  
+  
+   .navbar-toggler>.close-icon {  
+     display: block !important;  
+     width: 1.7em !important;  
+     height: 1.8em !important;  
+     background: no-repeat center center !important;  
+     background-size: 100% 100% !important;  
+     background-image: url("/images/close.png") !important;  
+     color: black !important;  
+   }  
+  
+   .navbar-toggler.collapsed>.close-icon,  
+   .navbar-toggler:not(.collapsed)>.navbar-toggler-icon {  
+     display: none !important;  
+   }  
+  
+   .navbar-light .navbar-toggler-icon {  
+     background-image: url("/images/open.png") !important;  
+   }  
+  
+   .navbar-light .navbar-toggler {  
+     border: none !important;  
+     color: black !important;  
+   }  
+  
+   .navbar-light .navbar-toggler:focus {  
+     outline: none !important;  
+   }  
+  
+  
+   /* calculator.css */  
+  
+   /* calculator.css */  
+   .calc-container {  
+     width: 100%;  
+     overflow-x: auto;  
+   }  
+  
+   /* calculator.css */  
+  
+   .calculator {  
+     display: none;  
+     width: 280px;  
+     /* Adjust the width to make it smaller */  
+     background-color: #4d5a67;  
+     border: 2px solid transparent;  
+     padding: 10px;  
+     padding-bottom: 20px;  
+     margin: 20px auto;  
+     border-radius: 50px;  
+     color: white;  
+   }  
+  
+   .calculator input[type="text"] {  
+     width: 80%;  
+     padding: 8px 10px;  
+     margin-bottom: 10px;  
+     font-size: 14px;  
+     /* Reduce the font size for a smaller input field */  
+     border: 2px solid transparent;  
+     color: white;  
+     background-color: #363f48;  
+     box-shadow: 2px 2px 2px #2c3339;  
+     border-radius: 2px;  
+   }  
+  
+   .calculator .button2 {  
+     display: grid;  
+     grid-template-columns: repeat(4, 1fr);  
+     gap: 20px;  
+   }  
+  
+   .calculator .button2 input[type="button"] {  
+     padding: 12px;  
+     font-size: 14px;  
+     border: transparent;  
+     border-radius: 20px;  
+     cursor: pointer;  
+     font-weight: 700;  
+   }  
+  
+   .no {  
+     background-color: gainsboro;  
+     color: #031a2d;  
+     box-shadow: 2px 2px 2px #a7a7a7;  
+   }  
+  
+   .sign {  
+     background-color: #f42f2f;  
+     color: white;  
+     box-shadow: 2px 2px 2px #ab2121;  
+   }  
+  
+   .sign2 {  
+     background-color: #031a2d;  
+     color: white;  
+     box-shadow: 2px 2px 2px #010b14;  
+   }  
+  
+   .sign3 {  
+     background-color: #929292;  
+     color: white;  
+     box-shadow: 2px 2px 2px #676767;  
+   }  
+  
+   .calculator .button2 input[type="button"]:hover {  
+     background: #ddd;  
+   }  
+  
+  
+   b {  
+     color: red;  
+     text-align: center;  
+     margin-bottom: 10px;  
+   }  
+  
+   label>span {  
+     text-align: center;  
+   }  
+  
+   .fraction {  
+     font-size: 25px;  
+   }  
+  
+   .periodic {  
+     background-image: url("/images/images (30).jpeg");  
+     background-size: 100%;  
+     height: 230px;  
+   }  
+  
+   .p {  
+     margin-right: 5px  
+   }  
+  
+   .a {  
+     color: white;  
+   }  
+  
+   .notification {  
+     position: fixed;  
+     bottom: 20;  
+     left: -300px;  
+     /* Initial position, hidden */  
+     transform: translateX(0);  
+     background-color: transparent;  
+     padding: 10px;  
+     color: black;  
+     border: 1px solid #ccc;  
+     border-radius: 5px;  
+     z-index: 1000;  
+     width: 300px;  
+     /* Initial width */  
+     transition: left 0.3s, width 0.3s, transform 0.3s;  
+   }  
+  
+   .notification.expanded {  
+     left: 0;  
+     /* Displayed position */  
+     width: 40%;  
+     /* Expanded width */  
+     transform: translateX(0);  
+   }  
+  
+   .notification-toggle {  
+     position: fixed;  
+     bottom: 10px;  
+     left: 10px;  
+     height: 30px;  
+     background-color: transparent;  
+     color: white;  
+     padding: 5px 10px;  
+     border-radius: 5px;  
+     cursor: pointer;  
+     z-index: 1001;  
+   }  
+  
+   /* for number base */  
+   .from {  
+     margin-top: 10px;  
+   }  
+  
+   .redm {  
+     color: red;  
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+   }  
+  
+   /* Color the background and add some space to the sides of the main column. */  
+   .container-fluid {  
+     background-color: #F8B003;  
+     /* We use !important to override the padding setting that Bootstrap already put for the container-fluid class. */  
+     padding-left: 10% !important;  
+     padding-right: 10% !important;  
+   }  
+  
+   /* Color the main column background white. */  
+   .col {  
+     background-color: white;  
+   }  
+  
+   .logo {  
+     border-radius: 4px;  
+     box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);  
+     margin-top: -5px;  
+   }  
+  
+   .root {  
+     text-decoration: overline;  
+   }  
+  
+   .row.section {  
+     padding: 5%;  
+   }  
+  
+   .navbar {  
+     box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);  
+   }  
+  
+   /* Bold the navbar's brand and put spacing on its left so it shifts right. */  
+   .navbar-brand {  
+     font-weight: bold;  
+     color: indianred;  
+   }  
+  
+   .surd {  
+     background-image: url("/images/surd.png");  
+     background-size: 100%;  
+     height: 200px;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .base {  
+     background-image: url("/images/images (58).jpeg");  
+     background-size: 100%;  
+     height: 190px;  
+   }  
+  
+   .quantify {  
+     background-image: url("/images/quality.jpeg");  
+     background-size: 100%;  
+     height: 190px;  
+   }  
+  
+   .same {  
+     background-image: url("/images/images (59).jpeg");  
+     background-size: cover;  
+     height: 250px;  
+     position: relative;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .sets {  
+     background-image: url("/images/images (14).png");  
+     background-size: 100%;  
+     height: 345px;  
+   }  
+  
+   #home {  
+     padding: 20%;  
+     background-image: url("media/pavement.jpg");  
+     background-size: cover;  
+  
+   }  
+  
+   .example {  
+     font-size: 20px;  
+   }  
+  
+   /* for numerator */  
+   .num {  
+     text-decoration: underline;  
+   }  
+  
+   .den {  
+     margin-left: 15px;  
+   }  
+  
+   .den1 {  
+     margin-left: 35px;  
+   }  
+  
+   .den2 {  
+     margin-left: 48px;  
+   }  
+  
+   .den3 {  
+     margin-left: -5px;  
+   }  
+  
+   .den4 {  
+     margin-left: 40px;  
+   }  
+  
+   .num1 {  
+     margin-left: 10px;  
+     text-decoration: underline;  
+   }  
+  
+   .equal {  
+     margin-left: 10px;  
+   }  
+  
+   .iframe {  
+     width: 90%;  
+     height: 250px;  
+     margin-left: 20px;  
+   }  
+  
+   .maths {  
+     font-size: 23px;  
+     opacity: 1;  
+     width: 100%;  
+     background-size: 100%;  
+   }  
+  
+   .iframer {  
+     width: 100%;  
+     height: 80%;  
+   }  
+  
+   #contact {  
+     background-image: url("images/Term_1.jepg");  
+     height: 350px;  
+     background-size: cover;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .button {  
+     display: flex;  
+     flex-direction: column;  
+   }  
+  
+   .pict {  
+     background-image: url("/images/measure.jpeg");  
+     background-size: cover;  
+     height: 250px;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .chem-properties {  
+     background-image: url("/images/images (2).png");  
+     background-size: 100%;  
+     height: 36%;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .elements {  
+     background-image: url("/images/classification.png");  
+     background-size: 100%;  
+     background-repeat: no-repeat;  
+     height: 250px;  
+   }  
+  
+   .one {  
+     float: left;  
+   }  
+  
+   .period {  
+     background-image: url("/images/metalloids.png");  
+     background-size: 100%;  
+     background-repeat: no-repeat;  
+     height: 200px;  
+   }  
+  
+   #ul {  
+     color: red;  
+   }  
+  
+   .table {  
+     overflow-x: scroll;  
+   }  
+  
+   .schemer {  
+     position: relative;  
+     background-image: url("/images/pendulum.png");  
+     background-repeat: no-repeat;  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .overdate {  
+     width: 100%;  
+     overflow: auto;  
+   }  
+  
+   th,  
+   td {  
+     border: 1px solid black;  
+     width: 50%;  
+   }  
+  
+   .chem-first {  
+     position: relative;  
+     background-image: url("/images/chem-matter\(2\).jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .second-term {  
+     position: relative;  
+     background-image: url("/images/k-e.jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .ss2-second {  
+     position: relative;  
+     background-image: url("/images/hydrogen.jpeg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .ss1-third {  
+     position: relative;  
+     background-image: url("/images/o-c.jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .ss2-third {  
+     position: relative;  
+     background-image: url("/images/reaction.jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .ss3-second {  
+     position: relative;  
+     background-image: url("/images/orbital.jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .chem-second {  
+     position: relative;  
+     background-image: url("/images/pt.jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .pic {  
+     position: relative;  
+     background-image: url("/images/atom-image.jpg");  
+     background-size: cover;  
+     height: 300px;  
+   }  
+  
+   .styling>div {  
+     width: 100%;  
+     height: inherit;  
+     display: flex;  
+     flex-direction: column;  
+     justify-content: center;  
+     align-content: center;  
+     flex-wrap: wrap;  
+     align-items: center;  
+     position: absolute;  
+   }  
+  
+   .styling>div>h5 {  
+     text-align: center;  
+     color: #F8B003;  
+     width: 95%;  
+     font-size: 20px;  
+     margin-top: 30px;  
+     font-style: bold;  
+   }  
+  
+   .styling>div>p {  
+     text-align: center;  
+     color: white;  
+     width: 80%;  
+     font-style: bold;  
+   }  
+  
+   .styling>div>button {  
+     align-self: center;  
+     padding: 8px 16px;  
+     border: 1px solid transparent;  
+     color: white;  
+     background-color: goldenrod;  
+     border-radius: 25px;  
+     font-size: 15px;  
+     cursor: pointer;  
+     box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);  
+   }  
+  
+   .styling>div>button>a {  
+     color: white;  
+   }  
+  
+   .styling>div>button>a>i {  
+     text-align: center;  
+     margin-left: 6px;  
+   }  
+  
+   .styling>div>button:hover {  
+     background-color: white;  
+   }  
+  
+   .styling>div>button:hover a {  
+     color: #F8B003;  
+     text-decoration-line: none;  
+   }  
+  
+   /* style for overline */  
+   .overline {  
+     text-decoration: overline;  
+     color: black;  
+  
+   }  
+  
+   .numera {  
+     text-decoration: underline;  
+   }  
+  
+   .deno {  
+  
+     margin-left: 35px;  
+   }  
+  
+   .numerator {  
+     margin-left: 5px;  
+   }  
+  
+   .denit {  
+     margin-left: 80;  
+   }  
+  
+   .video {  
+     width: 95%;  
+     height: 350px;  
+     margin-top: 30px;  
+     margin-bottom: 30px;  
+     margin-left: 10px;  
+   }  
+  
+   .buti {  
+     position: fixed;  
+     bottom: 10%;  
+     background-color: transparent;  
+     color: red;  
+   }  
+  
+   .space {  
+     margin-left: 20px;  
+   }  
+  
+   .dentist {  
+     margin-left: 136px;  
+     text-decoration: overline;  
+   }  
+  
+   .don {  
+     margin-left: 150px;  
+   }  
+  
+   .smaller {  
+     font-size: 18px;  
+   }  
+  
+   .dont {  
+     margin-left: 90px;  
+   }  
+  
+   .pinky {  
+     margin-left: 20px;  
+   }  
+  
+   .device {  
+     margin-left: 25px;  
+   }  
+  
+   .denot {  
+     margin-left: 50px;  
+   }  
+  
+   .simplify {  
+     margin-left: 80px;  
+   }  
+  
+   .maths-pics {  
+     width: 100%;  
+   }  
+  
+   #next {  
+     display: flex;  
+     justify-content: center;  
+   }  
+  
+   #next:hover {  
+     text-decoration-line: none;  
+   }  
+  
+   .but-cont {  
+    display: flex;  
+    flex-direction: column;  
+   }  
+  
+   .but, .but2 {  
+     align-self: center;  
+     padding: 10px 80px;  
+     margin: 0;  
+     background-color: #4CAF50;  
+     color: #fff;  
+     border: none;  
+     border-radius: 4px;  
+     cursor: pointer;  
+     margin-bottom: 30px;  
+   }  
+  
+   .but2 {  
+    background-color: #5fc0d3;  
+    padding: 10px 40px;  
+    margin-top: 30px;  
+    margin-bottom: 25px;  
+   }  
+  
+   .but3 {  
+    padding: 10px 80px;  
+   }  
+  
+   .but4 {  
+    padding: 10px 58px;  
+   }  
+  
+   .but5 {  
+    padding: 10px 32px;  
+   }  
+  
+   a:hover {  
+     text-decoration: none;  
+     text-decoration-line: none;  
+   }  
+  
+   .ex {  
+     background-image: url("images/Example1.jpeg");  
+     height: 180px;  
+     background-size: cover;  
+  
+   }  
+  
+   .ex2 {  
+     background-image: url("/images/Example2.png");  
+     height: 180px;  
+     background-size: cover;  
+   }  
+  
+   .ex3 {  
+     background-image: url("/images/392528.jpeg");  
+     height: 180px;  
+     background-size: cover;  
+   }  
+  
+   .solution {  
+     color: red;  
+     text-decoration: underline;  
+     text-align: center;  
+     justify-content: center;  
+     align-items: center;  
+     text-transform: capitalize;  
+     font-weight: bolder;  
+   }  
+  
+   .mi {  
+     background-image: url("/images/micrometer.png");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .mi2 {  
+     background-image: url("/images/micro2.png");  
+     background-size: cover;  
+     height: 350px;  
+   }  
+  
+   .null {  
+     color: white;  
+   }  
+  
+   #container {  
+     max-width: 400px;  
+     margin: 30px auto;  
+     background-color: #fff;  
+     padding: 20px;  
+     border-radius: 8px;  
+     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);  
+   }  
+  
+   input {  
+     width: 100%;  
+   }  
+  
+   .mi3 {  
+     background-image: url("/images/ocrom.jpeg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .defi {  
+     background-color: skyblue;  
+     text-align: center;  
+     width: 93%;  
+   }  
+  
+   .buton {  
+     display: flex;  
+     flex-direction: row;  
+     width: 100%;  
+   }  
+  
+   #pic {  
+     background-size: cover;  
+     height: 250px;  
+     background-image: url("images/ss1-physics.jpeg");  
+  
+   }  
+  
+   .button1 {  
+     margin-left: 40px;  
+   }  
+  
+   #quote {  
+     user-select: none;  
+     -ms-user-select: none;  
+     -webkit-user-select: none;  
+     height: 150px;  
+     background-color: black;  
+     color: wheat;  
+     justify-content: center;  
+     align-content: center;  
+   }  
+  
+  
+   main {  
+     background-color: whitesmoke;  
+   }  
+  
+   .sub2,  
+   .sub {  
+     text-align: center;  
+     font-size: 20px;  
+     color: goldenrod;  
+     margin-top: 30px;  
+     margin-bottom: 30px;  
+     text-transform: uppercase;  
+   }  
+  
+   i {  
+     margin-left: 5px;  
+   }  
+  
+   .subjects {  
+     display: flex;  
+     flex-direction: column;  
+     align-items: center;  
+     justify-content: center;  
+   }  
+  
+   .button {  
+     display: flex;  
+     flex-direction: column;  
+     justify-content: center;  
+     align-items: center;  
+     align-content: center;  
+     background-color: white;  
+     padding-bottom: 40px;  
+     border-radius: 2px;  
+     color: black;  
+     width: 300px;  
+     height: 350px;  
+     margin-bottom: 40px;  
+     box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);  
+   }  
+  
+   .button:hover {  
+     text-decoration: none;  
+     transform-style: preserve-3d;  
+     /* Required */  
+     transform-origin: center center;  
+     transform: perspective(400px) translateZ(20px);  
+     transition: 0.3s transform ease-in-out;  
+   }  
+  
+   .button>h5 {  
+     align-self: start;  
+     text-align: left;  
+     padding: 10px;  
+     padding-bottom: 0px;  
+     font-size: 18px;  
+   }  
+  
+   .button:hover h5 {  
+     color: goldenrod;  
+   }  
+  
+   .button>h5>span,  
+   .button>p>span {  
+     font-size: 16px;  
+     color: goldenrod;  
+     font-weight: 500;  
+   }  
+  
+   .button:hover h5>span,  
+   .button:hover p>span {  
+     color: black;  
+   }  
+  
+   .button>p {  
+     text-align: left;  
+     padding: 10px;  
+     font-size: 16px;  
+   }  
+  
+   .img1,  
+   .button>img {  
+     width: inherit;  
+     height: 180px;  
+   }  
+  
+   .overlay {  
+     position: absolute;  
+     background-color: black;  
+     opacity: 50%;  
+     width: 100%;  
+     height: 100%;  
+     top: 0;  
+     left: 0;  
+   }  
+  
+   #subjects {  
+     background-image: url("images/term_1.avif");  
+     height: 250px;  
+     background-size: cover;  
+     position: relative;  
+   }  
+  
+   #subjects>div {  
+     display: flex;  
+     justify-content: center;  
+     align-content: center;  
+     width: 100%;  
+     height: inherit;  
+     position: absolute;  
+   }  
+  
+   #subjects>div>h5 {  
+     color: white;  
+     font-size: 22px;  
+     font-weight: 500;  
+     align-self: center;  
+     text-align: center;  
+     text-transform: uppercase;  
+   }  
+  
+   .define {  
+     background-color: skyblue;  
+     width: max-content;  
+     text-align: center;  
+     padding: 8px 20px;  
+     margin-bottom: 20px;  
+   }  
+  
+   .chem {  
+     position: relative;  
+     background-image: url("/images/first-chem.jpeg");  
+     height: 250px;  
+     background-size: cover;  
+   }  
+   .work{ 
+     position: relative; 
+     background-image: url("/images/maxresdefault.jpg"); 
+     height:250px; 
+     background-size: cover; 
+   } 
+   .heat{ 
+     position: relative; 
+     background-image: url("/images/energy-clipart-thermal-energy-14.png"); 
+     height: 250px; 
+     background-size: cover; 
+   } 
+   .same-style>div {  
+     display: flex;  
+     justify-content: center;  
+     align-content: center;  
+     width: 100%;  
+     height: inherit;  
+     position: absolute;  
+   }  
+  
+   .same-style>div>h5 {  
+     color: white;  
+     font-size: 22px;  
+     font-weight: 500;  
+     align-self: center;  
+     text-align: center;  
+     text-transform: uppercase;  
+   }  
+  
+   .definition {  
+     background-color: skyblue;  
+     text-align: center;  
+     width: 100%;  
+     height: max-content;  
+   }  
+  
+   .definition>h5 {  
+     padding: 15px 0;  
+     margin-bottom: 0;  
+   }  
+  
+   .content {  
+     display: flex;  
+     flex-direction: column;  
+     justify-content: center;  
+   }  
+  
+   .center {  
+     border-top: 0;  
+     width: 3%;  
+     margin-left: 6px;  
+     text-align: center;  
+   }  
+  
+   .center-last {  
+     border-bottom: 0;  
+     width: 3%;  
+     text-align: center;  
+   }  
+  
+   .lcm-last {  
+     border-bottom: 0;  
+     border-right: 0;  
+   }  
+  
+   .chem-industry {  
+     background-image: url("/images/images (52).jpeg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .atoms {  
+     position: relative;  
+     background-image: url("/images/orbital.jpg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .maths-first {  
+     background-image: url("/images/maths.jpeg");  
+     background-size: cover;  
+     height: 250px;  
+   }  
+  
+   .p {  
+     margin-left: 10px;  
+     font-weight: 400;  
+     margin-bottom: 10px;  
+   }  
+  
+   .button a {  
+     color: #ffffff;  
+     text-decoration: none;  
+     text-decoration-color: none;  
+   }  
+  
+   .button:hover a {  
+     color: #ffffff;  
+     text-decoration: none;  
+     text-decoration-color: none;  
+   }  
+  
+   #subjects1 {  
+     background-image: url("/images/maths (1).jpeg");  
+     height: 250px;  
+     background-size: 100%;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .physical-properties {  
+     background-image: url("/images/Physical-Properties.jpg");  
+     height: 70%;  
+     background-size: 100%;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .matter {  
+     position: relative;  
+     background-image: url("/images/chem-matter\(2\).jpg");  
+     background-size: 100%;  
+     height: 200px;  
+     background-repeat: no-repeat;  
+   }  
+  
+   .fractions {  
+     font-size: 20px;  
+   }  
+  
+   .tabler {  
+     font-size: 30px;  
+     font-weight: bold;  
+     opacity: 1;  
+     width: 22%;  
+     height: 10%;  
+     margin-left: 25%;  
+   }  
+  
+   .binary {  
+     font-size: 20px;  
+     font-weight: bold;  
+     opacity: 1;  
+     width: 50%;  
+     height: 10%;  
+     margin-left: 25%;  
+   }  
+  
+   .left {  
+     text-align: right;  
+     width: 3%;  
+     letter-spacing: 3px;  
+     padding: -1%;  
+     border-left: 0;  
+     border-top: 0;  
+   }  
+   .def { 
+      background-color: skyblue; 
+      text-align: center; 
+      width: 65%; 
+    } 
+   .left-last {  
+     text-align: right;  
+     width: 2%;  
+     border-bottom: 0;  
+     border-left: 0;  
+   }  
+  
+   .lefty {  
+     text-align: right;  
+     width: 30%;  
+     border-bottom: 0;  
+     border-left: 0;  
+   }  
+  
+   .right {  
+     text-align: left;  
+     width: 1%;  
+     border-right: 0;  
+     border-top: 0;  
+   }  
+  
+   .spak {  
+     margin-left: 34px;  
+   }  
+  
+   .vector {  
+     background-image: url("/images/images (6).png");  
+     background-size: 100%;  
+     height: 200px;  
+   }  
+  
+   .centered {  
+     margin: 1px;  
+   }  
+  
+   .right-last {  
+     text-align: left;  
+     width: 1%;  
+     border-bottom: 0;  
+     border-right: 0;  
+  
+   }  
+  
+   /* CSS for the question numbers container */  
+   .question-numbers-container {  
+     background-color: #f0f0f0;  
+     padding: 10px;  
+     max-height: 20%;  
+     overflow-y: auto;  
+     border-radius: 5px;  
+     margin-bottom: 20px;  
+   }  
+  
+   /* CSS for the question numbers */  
+   .question-numbers {  
+     display: flex;  
+     flex-wrap: wrap;  
+     /* Allow the numbers to wrap into multiple rows */  
+     gap: 10px;  
+   }  
+  
+   /* Style for individual question number links */  
+   .question-numbers a {  
+     text-decoration: none;  
+     padding: 10px 15px;  
+     border-radius: 50%;  
+     cursor: pointer;  
+     transition: background-color 0.3s;  
+     display: inline-block;  
+     /* Ensure each number is on its own line */  
+     width: 30px;  
+     /* Set a fixed width to create rows of 10 */  
+     text-align: center;  
+     /* Center the numbers within each circle */  
+   }  
+  
+   /* Style for individual question number links on hover */  
+   /* .question-numbers a:hover {} */  
+  
+   .mths-numbers {  
+     background-image: url("/images/images (42).jpeg");  
+     background-size: 100%;  
+     height: 250px;  
+   }  
+  
+   .strong {  
+     font-size: 25px;  
+  
+   }  
+  
+   .bi {  
+     margin-left: 15%;  
+   }  
+  
+   .di {  
+     margin-left: 19%;  
+   }  
+  
+   .bi2 {  
+     margin-left: 25%;  
+   }  
+  
+   .picmen {  
+     background-image: url("/images/images (57).jpeg");  
+     background-size: 100%;  
+     height: 300px;  
+   }  
+  
+   .line {  
+     text-decoration: underline overline;  
+     margin-left: 20%;  
+   }  
+  
+   .line3 {  
+     text-decoration: underline overline;  
+     margin-left: 25%;  
+   }  
+  
+   .liner {  
+     text-decoration: overline;  
+     margin-left: 20%  
+   }  
+  
+   .liners {  
+     text-decoration: underline;  
+     margin-left: 12%;  
+     border: 40%;  
+   }  
+  
+   .di2 {  
+     margin-left: 25%;  
+   }  
+  
+   .bar {  
+     text-decoration: overline;  
+   }  
+  
+   .line2 {  
+     text-decoration: underline overline;  
+     margin-left: 31%;  
+   }  
+  
+   .picture {  
+     background-image: url("/images/images (29).jpeg");  
+     background-size: 100%;  
+     height: 200px;  
+   }  
+  
+   .quest {  
+     display: inline-flex;  
+   }  
+  
+   .marquee-container {  
+     max-width: 1000%;  
+     overflow-x: hidden;  
+   }  
+  
+   .jax {  
+     margin-left: 5%;  
+   }  
+  
+   #marquee {  
+     animation: marquee 20s linear infinite;  
+     width: 300%;  
+     white-space: nowrap;  
+   }  
+  
+   @keyframes marquee {  
+     0% {  
+       transform: translateX(100%);  
+     }  
+  
+     100% {  
+       transform: translateX(-100%);  
+     }  
+   }  
+  
+   .day {  
+     margin-right: 10px;  
+   }  
+  
+   .days {  
+     margin-left: 25px;  
+   }  
+  
+   .vector-container {  
+     display: inline-block;  
+   }  
+  
+   .rates {  
+     background-image: url("/images/images (15).png");  
+     background-size: 100%;  
+     height: 340px;  
+   }  
+  
+   .stronger {  
+     font-family: bolder;  
+     font-size: 20px;  
+   }  
+  
+   .members {  
+     background-image: url("/images/images (56).jpeg");  
+     background-size: 100%;  
+     height: 200px;  
+   }  
+  
+   .bio-first {  
+     background-image: url("/images/images (36).jpeg");  
+     height: 200px;  
+     background-size: 100%;  
+   }  
+  
+   /*Css for scheme of work */  
+   .topics {  
+     display: flex;  
+     flex-direction: column;  
+     justify-content: center;  
+     align-content: center;  
+     flex-wrap: wrap;  
+   }  
+  
+   .topics>a:hover,  
+   .topics>a>p:hover {  
+     text-decoration-line: none;  
+   }  
+  
+   .topics>a {  
+     display: flex;  
+     flex-direction: column;  
+     justify-content: center;  
+     align-content: center;  
+     flex-wrap: wrap;  
+     margin: 20px 0;  
+     width: 75%;  
+     background-color: whitesmoke;  
+     border-radius: 15px 20px 0px 0px;  
+     box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2);  
+     height: fit-content;  
+   }  
+  
+   .topics>a>img {  
+     align-self: center;  
+     padding: 10px 0;  
+     cursor: pointer;  
+   }  
+  
+   .topics>a>p {  
+     align-self: center;  
+     text-align: center;  
+     width: 100%;  
+     color: #010b14;  
+     font-weight: 500;  
+     background-color: white;  
+     padding: 20px;  
+     cursor: pointer;  
+     margin-bottom: 0;  
+     overflow: hidden;  
+     text-overflow: ellipsis;  
+     white-space: nowrap;  
+   }  
+     @media screen and (min-width: 600px) {   
+      .topics {   
+        flex-direction: row;   
+      }   
+  
+      .topics>a {   
+        margin: 30px 50px;   
+        width: 40%;   
+      }   
+  
+      #subjects {   
+        height: 500px;   
+      }   
+      .def{  
+        width: 30%;  
+      }  
+      #subjects>div>h5 {   
+        font-size: 40px;   
+      }   
+  
+      .overlay {   
+        opacity: 55%;   
+      }   
+  
+      .overlaydiff {   
+        opacity: 70%;   
+      }   
+  
+      .vector-container {   
+        display: flex;   
+      }   
+  
+      .di {   
+        margin-left: 17.5%;   
+      }   
+  
+      .di2 {   
+        margin-left: 18.5%;   
+      }   
+  
+      .line {   
+        margin-left: 18.5%;   
+      }   
+  
+      .same {   
+        height: 450px;   
+      }   
+  
+      .line2 {   
+        margin-left: 20.5%;   
+      }   
+  
+      .bio-first {   
+        height: 400px;   
+        background-repeat: no-repeat;   
+      }   
+  
+      .subjects1 {   
+        height: 400px;   
+      }   
+  
+      .picture {   
+        height: 400px;   
+      }   
+  
+      .period {   
+        height: 400px;   
+      }   
+  
+      .elements {   
+        height: 450px;   
+      }   
+  
+      .vector {   
+        height: 400px;   
+        background-repeat: no-repeat;   
+      }   
+  
+      .picmen {   
+        height: 800px;   
+      }   
+  
+      body {   
+        margin-bottom: 0;   
+      }   
+  
+      .maths-first {   
+        height: 600px;   
+        background-repeat: no-repeat;   
+      }   
+  
+      .matter {   
+        height: 500px;   
+      }   
+  
+      .h2 {   
+        margin-top: 0;   
+      }   
+  
+      #pic {   
+        height: 600px;   
+      }   
+  
+      .surd {   
+        height: 600px;   
+      }   
+  
+      .pict {   
+        height: 600px;   
+      }   
+  
+      .ex {   
+        height: 500px;   
+      }   
+  
+      .ex2 {   
+        height: 500px;   
+      }   
+  
+      .ex3 {   
+        height: 600px;   
+      }   
+  
+      .p {   
+        width: 100%;   
+        font-size: 20px;   
+      }   
+  
+      .mi {   
+        height: 600px;   
+      }   
+  
+      .notification {   
+        width: 20%;   
+        background-color: blue;   
+      }   
+  
+      .mi2 {   
+        height: 600px;   
+      }   
+  
+      .mi3 {   
+        height: 600px;   
+      }   
+  
+      .sets {   
+        height: 800px;   
+      }   
+  
+      .defi {   
+        width: 40%;   
+      }   
+  
+      .chem {   
+        height: 500px;   
+      }   
+      .work {  
+        height: 500px;  
+      }  
+      .container {   
+        width: 140%;   
+      }   
+  
+      .periodic {   
+        height: 500px;   
+      }   
+  
+      .chem-first {   
+        height: 500px;   
+      }   
+  
+      .mths-numbers {   
+        height: 600px;   
+      }   
+  
+      .rates {   
+        height: 800px;   
+      }   
+  
+      .show {   
+        width: 0px;   
+        visibility: hidden;   
+      }   
+  
+      .iframe {   
+        height: 500px;   
+      }   
+  
+      table {   
+        font-size: x-large;   
+      }   
+  
+      .quantify {   
+        height: 400px;   
+      }   
+  
+      .members {   
+        height: 500px;   
+        background-repeat: no-repeat;   
+      }   
+    }  
+   @media screen and (min-width: 768px) {  
+     .navbar-light .navbar-nav .nav-link {  
+       margin: 0 10px !important;  
+     }  
+  
+     .video {  
+       margin: 30px auto;  
+       width: auto;  
+     }  
+  
+     .content>p {  
+       align-self: center;  
+       max-width: 80%;  
+     }  
+     .defi{ 
+       width: 35%; 
+     } 
+     .content>ol,  
+     .content>ul,  
+     .content>table,  
+     .content>iframe {  
+       align-self: center;  
+       display: flex;  
+       flex-direction: column;  
+       justify-content: center;  
+       align-content: center;  
+       flex-wrap: wrap;  
+       max-width: 80%;  
+       margin-top: 20px;  
+     }  
+  
+     .content>ul,  
+     .content>ol {  
+       align-content: flex-start;  
+       width: 100%;  
+     }  
+  
+     .topics {  
+       flex-direction: row;  
+     }  
+  
+     .topics>a {  
+       margin: 30px 50px;  
+       width: 32%;  
+     }  
+  
+     .schemer,  
+     .styling {  
+       height: 450px;  
+     }  
+     .def{ 
+       width: 28%; 
+     } 
+     .pic {  
+       background-image: url("/images/atom-image\(2\).jpg");  
+       height: 450px;  
+     }  
+  
+     .styling>div>h5 {  
+       font-size: 40px;  
+     }  
+  
+     .styling>div>p {  
+       display: block;  
+       width: 80%;  
+       font-size: 30px;  
+     }  
+  
+     .styling>div>button {  
+       font-size: 25px;  
+       padding: 12px 24px;  
+       border-radius: 32px;  
+       margin-top: 10px;  
+     }  
+  
+     .subjects {  
+       display: flex;  
+       justify-content: center;  
+       align-content: center;  
+       flex-direction: row;  
+       flex-wrap: wrap;  
+     }  
+  
+     .button {  
+       margin: 30px 20px;  
+     }  
+  
+     #subjects>div>h5,  
+     .same-style>div>h5 {  
+       font-size: 40px;  
+     }  
+  
+     .sub {  
+       font-size: 25px;  
+     }  
+  
+     .define {  
+       padding: 8px 40px;  
+     }  
+  
+     .content>.table-diff {  
+      max-width: 95%;  
+    }  
+  
+    .but-cont {  
+      flex-direction: row;  
+      justify-content: center;  
+      padding-top: 30px;  
+    }  
+  
+    .but2 {  
+      margin-top: 0;  
+      margin-bottom: 30px;  
+      margin-right: 50px;  
+    }  
+  
+   }  
+  
+   @media screen and (min-width: 1024px) {  
+     .styling>div>p {  
+       width: 60%;  
+     }  
+  
+     .content>ol,  
+     .content>ul,  
+     .content>p,  
+     .content>table,  
+     .images {  
+       max-width: 50%;  
+     }  
+  
+     .images {  
+       align-self: center;  
+       width: 100%;  
+       height: 250px;  
+     }  
+  
+     .images2 {  
+       height: 400px;  
+       margin-bottom: 20px;  
+     }  
+  
+     .table {  
+      overflow-x: hidden;  
+    }  
+  
+    .content>.table-diff {  
+      max-width: 70%;  
+    }  
+   }  
+  
+   @media screen and (min-width: 1280px) {  
+     .navbar-light .navbar-nav .nav-link {  
+       margin: 0 20px !important;  
+     }  
+  
+     .styling {  
+       height: 500px;  
+     }  
+  
+     .styling>div>p {  
+       width: 45%;  
+     }  
+  
+     .topics>a {  
+       margin: 30px 50px;  
+       width: 20%;  
+     }  
+  
+     #subjects {  
+       background-image: url("images/term_1\(1\).jpg");  
+       height: 520px;  
+     }  
+  
+     .same {  
+       background-image: url("/images/images\ \(59\)\ \(2\).jpeg");  
+       height: 450px;  
+       background-size: cover;  
+     }  
+  
+     .images {  
+       height: 350px;  
+     }  
+  
+     .images2 {  
+       height: 550px;  
+     }  
    }
- .defino {
-   background-color: skyblue;
-   width: 45%;
-   text-align: center;
- }
-
- .bio-first {
-   background-image: url("/images/images (36).jpeg");
-   height: 200px;
-   background-size: 100%;
- }
-
- @media screen and (min-width: 600px) {
-  #subjects {
-    height: 500px;
-  }
-  #subjects>div>h5 {
-    font-size: 40px;
-  }
-  .overlay {
-    opacity: 70%;
-  }
-   .vector-container {
-     display: flex;
-   }
-   .di{
-     margin-left: 17.5%;
-   }
-   .di2{
-     margin-left: 18.5%;
-   }
-   .line{
-     margin-left: 18.5%;
-   }
-   .same{
-     height: 600px;
-   }
-   .line2{
-     margin-left: 20.5%;
-   }
-   .bio-first {
-     height: 400px;
-     background-repeat: no-repeat;
-   }
-
-   .subjects1 {
-     height: 400px;
-   }
-
-   .picture {
-     height: 400px;
-   }
-   
-   .period {
-     height: 400px;
-   }
-
-   .elements {
-     height: 450px;
-   }
-
-   .vector {
-     height: 400px;
-     background-repeat: no-repeat;
-   }
-   .picmen{
-     height: 800px;
-   }
-   body {
-     margin-bottom: 0;
-   }
-
-   .pic {
-     height: 600px;
-   }
-
-   .schemer {
-     height: 500px;
-   }
-
-   .maths-first {
-     height: 600px;
-     background-repeat: no-repeat;
-   }
-
-   .matter {
-     height: 500px;
-   }
-
-   .h2 {
-     margin-top: 0;
-   }
-
-   #pic {
-     height: 600px;
-   }
-
-   .surd {
-     height: 600px;
-   }
-
-   .pict {
-     height: 600px;
-   }
-
-   .ex {
-     height: 500px;
-   }
-
-   .ex2 {
-     height: 500px;
-   }
-
-   .ex3 {
-     height: 600px;
-   }
-
-   .p {
-     width: 100%;
-     font-size: 30px;
-   }
-
-
-
-   .mi {
-     height: 600px;
-   }
-
-   .notification {
-     width: 20%;
-     background-color: blue;
-   }
-
-   .mi2 {
-     height: 600px;
-   }
-
-   .mi3 {
-     height: 600px;
-   }
-   .sets{
-     height: 800px;
-   }
-   .defi {
-     width: 80%;
-   }
-   .definition{
-     height: 60px;
-   }
-
-   .define {
-     width: 300px;
-   }
-
-   .chem {
-     height: 500px;
-   }
-   .container{
-     width: 140%;
-   }
-   .periodic {
-     height: 500px;
-   }
-
-   .none {
-     display: content;
-   }
-
-   .maths {
-     background-size: cover;
-     align-items: center;
-     justify-content: center;
-     width: 1000px;
-   }
-
-   .chem-first {
-     height: 500px;
-   }
-
-   .mths-numbers {
-     height: 600px;
-   }
-   .rates{
-     height: 800px;
-   }
-   .show{
-     width: 0px;
-     visibility: hidden;
-   }
-   .iframe {
-     height: 500px;
-   }
-    ol{
-      font-size: x-large;
-    }
-    p{
-      font-size: x-large;
-    }
-    table{
-      font-size: x-large;
-    }
-    .quantify{
-      height: 400px;
-    }
-   .members {
-     height: 500px;
-     background-repeat: no-repeat;
-   }
- }
-
-@media screen and (min-width: 1280px) {
-  #subjects {
-    background-image: url("images/Term_1 (1).jpeg");
-  }
-}
