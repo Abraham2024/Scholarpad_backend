@@ -23,3 +23,11 @@ class UserScore(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     date = models.DateField()
 
+
+class HighScore(models.Model):
+    user = models.CharField(max_length=255)
+    score = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.user} - {self.score}"
+

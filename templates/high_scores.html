@@ -1,0 +1,8 @@
+<!-- high_scores.html -->
+<h1>High Scores</h1>
+<ul>
+    {% for high_score in high_scores %}
+        <li>{{ high_score.user }} - {{ high_score.score }}</li>
+    {% endfor %}
+</ul>
+

@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import UserScore, Quiz
 import json
+from .models import HighScore
 
 def save_user_score(request, quiz_identifier):
     if request.method == 'POST':
@@ -108,3 +109,15 @@ def upload_profile_pic(request):
 
 def jamb(request):
     return render(request, "jamb.html")
+
+def display_high_scores(request):
+    high_scores = HighScore.objects.all().order_by('-score')[:10]  # Get top 10 scores
+    return render(request, 'high_scores.html', {'high_scores': high_scores})
+
+def store_high_score(request):
+    if request.method == 'POST':
+        user = request.POST.get('user')
+        score = request.POST.get('score')
+        HighScore.objects.create(user=user, score=score)
+    return redirect('display_high_scores')
+
