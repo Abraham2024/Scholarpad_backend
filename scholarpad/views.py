@@ -110,6 +110,9 @@ def upload_profile_pic(request):
 def jamb(request):
     return render(request, "jamb.html")
 
+def games(request):
+    return render(request, "games.html")
+
 def display_high_scores(request):
     high_scores = HighScore.objects.all().order_by('-score')[:10]  # Get top 10 scores
     return render(request, 'high_scores.html', {'high_scores': high_scores})
