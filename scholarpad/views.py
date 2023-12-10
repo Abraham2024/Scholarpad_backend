@@ -44,7 +44,7 @@ def signup(request):
         username = request.POST['username']
         email = request.POST['email']
         secret_question = request.POST['secret_question']
-        secret_answer = request.POST['secret_answeer']
+        secret_answer = request.POST['secret_answer']
         password = request.POST['password']
         password2 = request.POST['password2']
         first_name = request.POST['first_name']
