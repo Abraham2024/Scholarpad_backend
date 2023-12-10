@@ -47,6 +47,8 @@ def signup(request):
         password2 = request.POST['password2']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
+        state = request.POST['state']
+        phone_number = request.POST['phone_number']
 
         if password == password2:
             if User.objects.filter(email=email).exists():
@@ -66,6 +68,9 @@ def signup(request):
                     user=user,
                     first_name=first_name,
                     last_name=last_name,
+                    state = state,
+                    phone_number = phone_number,
+
                 )
                 messages.info(request, 'Account created succesfully')
 
