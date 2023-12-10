@@ -70,23 +70,9 @@ choices.forEach((choice) => {
     const classToApply =
       selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-   // Add this function to send high scores to Django backend
-function sendHighScore(user, score) {
-    fetch('/store-high-score/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-CSRFToken': getCookie('csrftoken'),  // Ensure you have CSRF token
-        },
-        body: `user=${user}&score=${score}`,
-    });
-}
-
-// Modify the code where you update the high score
-if (classToApply === 'correct') {
-    incrementScore(CORRECT_BONUS);
-    sendHighScore('user', score);  // Replace 'user' with actual user data
-}
+    if (classToApply === 'correct') {
+      incrementScore(CORRECT_BONUS);
+    }
 
     selectedChoice.parentElement.classList.add(classToApply);
 
@@ -103,3 +89,4 @@ incrementScore = (num) => {
 };
 
 startGame();
+
