@@ -17,8 +17,8 @@
              <h5>{{message}}</h5> 
              {% endfor %} 
              <div class="icons"> 
-                 <img src="/images/icon-cap.png" alt="cap"> 
-                 <img src="/images/icon-cert.png" alt="certificate"> 
+		     <img src="{% static 'assets/images/icon-cap.png' %}" alt="cap"> 
+		     <img src="{% static 'assets/images/icon-cert.png' %}" alt="certificate"> 
              </div> 
              <h1 class="log">Student Login</h1> 
              <form method="POST" action="login"> 
@@ -52,10 +52,10 @@
   
              if (passwordInput.type === "password") { 
                  passwordInput.type = "text"; 
-                 document.getElementById('show').setAttribute('src', '/images/icon-show.png') 
+		     document.getElementById('show').setAttribute('src', '{% static 'assets/images/icon-show.png' %}') 
              } else { 
                  passwordInput.type = "password"; 
-                 document.getElementById('show').setAttribute('src', '/images/icon-hide.png') 
+		     document.getElementById('show').setAttribute('src', '{% static 'assets/images/icon-hide.png' %}') 
              } 
          } 
      </script> 
