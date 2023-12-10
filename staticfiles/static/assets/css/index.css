@@ -45,7 +45,7 @@
    height: 1.8em !important; 
    background: no-repeat center center !important; 
    background-size: 100% 100% !important; 
-   background-image: url("/images/close.png") !important; 
+   background-image: url("assets/images/close.png") !important; 
    color: black !important; 
  } 
   
@@ -55,7 +55,7 @@
  } 
   
  .navbar-light .navbar-toggler-icon { 
-   background-image: url("/images/open.png") !important; 
+   background-image: url("assets/images/open.png") !important; 
  } 
   
  .navbar-light .navbar-toggler { 
