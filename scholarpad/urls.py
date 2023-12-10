@@ -21,6 +21,7 @@ urlpatterns = [
     path("jamb", views.jamb, name = "jamb"),
     path('high-scores/', display_high_scores, name='display_high_scores'),
     path('store-high-score/', store_high_score, name='store_high_score'),
+    path("end", views.end, name = "end"),
 
     # ... other URLs
 

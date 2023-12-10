@@ -126,6 +126,17 @@ def display_high_scores(request):
     high_scores = HighScore.objects.all().order_by('-score')[:10]  # Get top 10 scores
     return render(request, 'high_scores.html', {'high_scores': high_scores})
 
+# views.py
+from django.shortcuts import render
+from .models import HighScore
+
+def end(request):
+    # Assume you have the user object available in request.user
+    user = request.user
+    context = {'username': user.profile.username if hasattr(user, 'profile') else user.username}
+    return render(request, 'end.html', context)
+
+
 def store_high_score(request):
     if request.method == 'POST':
         user = request.POST.get('user')
