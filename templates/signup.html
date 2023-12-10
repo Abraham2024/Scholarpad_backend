@@ -81,10 +81,10 @@
   
              if (passwordInput.type === "password") { 
                  passwordInput.type = "text"; 
-                 document.getElementById('show').setAttribute('src', '/images/icon-show.png') 
+		     document.getElementById('show').setAttribute('src', "{% static '/assetsimages/icon-show.png'%}") 
              } else { 
                  passwordInput.type = "password"; 
-                 document.getElementById('show').setAttribute('src', '/images/icon-hide.png') 
+		     document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}") 
              } 
          } 
   
@@ -93,10 +93,10 @@
   
              if (password2Input.type === "password") { 
                  password2Input.type = "text"; 
-                 document.getElementById('show2').setAttribute('src', '/images/icon-show.png') 
+		     document.getElementById('show2').setAttribute('src', "{% static 'assets/images/icon-show.png' %}") 
              } else { 
                  password2Input.type = "password"; 
-                 document.getElementById('show2').setAttribute('src', '/images/icon-hide.png') 
+		     document.getElementById('show2').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}") 
              } 
          } 
      </script> 
