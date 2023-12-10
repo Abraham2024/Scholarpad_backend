@@ -52,10 +52,10 @@
   
              if (passwordInput.type === "password") { 
                  passwordInput.type = "text"; 
-		     document.getElementById('show').setAttribute('src', 'assets/images/icon-show.png') 
+		     document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-show.png' %}") 
              } else { 
                  passwordInput.type = "password"; 
-		     document.getElementById('show').setAttribute('src', 'assets/images/icon-hide.png') 
+		     document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}") 
              } 
          } 
      </script> 
