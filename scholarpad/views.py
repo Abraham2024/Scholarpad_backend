@@ -126,9 +126,6 @@ def display_high_scores(request):
     high_scores = HighScore.objects.all().order_by('-score')[:10]  # Get top 10 scores
     return render(request, 'high_scores.html', {'high_scores': high_scores})
 
-# views.py
-from django.shortcuts import render
-from .models import HighScore
 
 def end(request):
     # Assume you have the user object available in request.user
