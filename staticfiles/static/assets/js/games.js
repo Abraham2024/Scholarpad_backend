@@ -43,7 +43,7 @@ getNewQuestion = () => {
         const username = prompt('Enter your username:');
 
         // Send username and score to the Django server
-        fetch('/end/', {
+        fetch('/high_scores/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ getNewQuestion = () => {
             console.error('There was a problem with the fetch operation:', error);
         });
 
-        return window.location.assign('end');
+        return window.location.assign('high_scores');
     }
 
     questionCounter++;
