@@ -41,5 +41,5 @@ class HighScore(models.Model):
     score = models.IntegerField()
 
     def __str__(self):
-        return f"{self.user} - {self.score}"
+        return f"{self.username} - {self.score}"
 
