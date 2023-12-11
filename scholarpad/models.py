@@ -37,7 +37,7 @@ class UserScore(models.Model):
 
 
 class HighScore(models.Model):
-    user = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
     score = models.IntegerField()
 
     def __str__(self):
