@@ -5,7 +5,7 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
-const endGameButton = document.getElementById('end-game-button');  // Assuming you have an element with id 'end-game-button'
+const endGameButton = document.getElementById('end-game-button'); // Assuming you have an element with id 'end-game-button'
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -39,8 +39,6 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-    // Existing code...
-
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         const username = prompt('Enter your username:');
 
@@ -66,7 +64,22 @@ getNewQuestion = () => {
         return window.location.assign('end');
     }
 
-    // Existing code...
+    questionCounter++;
+    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerHTML = currentQuestion.question;
+
+    choices.forEach((choice, index) => {
+        const choiceNumber = index + 1;
+        choice.innerHTML = currentQuestion.choices[index];
+        choice.dataset['number'] = choiceNumber;
+    });
+
+    availableQuestions.splice(questionIndex, 1);
+    acceptingAnswers = true;
 };
 
 choices.forEach((choice) => {
