@@ -1,32 +1,43 @@
+// end.js
+const saveScoreForm = document.getElementById('saveScoreForm');
 const usernameInput = document.getElementById('username');
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
-const mostRecentScore = localStorage.getItem('mostRecentScore');
 
-const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+// Assume you have a variable 'score' defined somewhere
+finalScore.innerText = score;
 
-const MAX_HIGH_SCORES = 5;
+saveScoreForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-finalScore.innerText = mostRecentScore;
+    const username = usernameInput.value;
 
-usernameInput.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !usernameInput.value;
+    // Validate username and send data to the Django server
+    if (username.trim() !== '') {
+        saveHighScore(username);
+    } else {
+        alert('Please enter a valid username.');
+    }
 });
 
-saveHighScore = (e) => {
-    e.preventDefault();
-    alert("Congratulations! You are a scholar");
-
-    const user = usernameInput.value; // Update to use the username input value
-    const score = {
-        score: mostRecentScore,
-        name: user,
-    };
-
-    highScores.push(score);
-    highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(MAX_HIGH_SCORES);
-
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('high_scores');
-};
+// Function to send data to Django server
+function saveHighScore(username) {
+    // Send username and score to the Django server
+    fetch('/high_score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, score }),
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error('Network response was not ok.');
+    }).then(data => {
+        // Handle the response if needed
+        console.log(data);
+    }).catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+}
