@@ -19,7 +19,7 @@ urlpatterns = [
          path('combo', views.combo, name = "combo"),
     path('save_user_score/<str:quiz_identifier>/', save_user_score, name='save_user_score'),
     path("jamb", views.jamb, name = "jamb"),
-    path('high-scores/', display_high_scores, name='display_high_scores'),
+    path('high_scores/', display_high_scores, name='display_high_scores'),
     path('store-high-score/', store_high_score, name='store_high_score'),
     path("end", views.end, name = "end"),
 
