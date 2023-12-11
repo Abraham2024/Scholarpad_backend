@@ -134,10 +134,18 @@ def end(request):
     return render(request, 'end.html', context)
 
 
-def store_high_score(request):
+@csrf_exempt
+def save_high_score(request):
     if request.method == 'POST':
-        user = request.POST.get('user')
-        score = request.POST.get('score')
-        HighScore.objects.create(user=user, score=score)
-    return redirect('display_high_scores')
+        data = json.loads(request.body)
+        username = data.get('username')
+        score = data.get('score')
+
+        if username is not None and score is not None:
+            HighScore.objects.create(username=username, score=score)
+            return JsonResponse({'message': 'Score saved successfully'})
+        else:
+            return JsonResponse({'message': 'Invalid data received'}, status=400)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
 
