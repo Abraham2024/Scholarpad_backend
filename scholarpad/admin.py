@@ -3,7 +3,7 @@ from .models import Feature
 from .models import UserProfile
 from .models import Quiz
 from .models import UserScore
-from .models import HighScore,
+from .models import HighScore
 
 # Register your models here.
 admin.site.register(Feature),
