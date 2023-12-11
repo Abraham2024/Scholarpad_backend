@@ -6,6 +6,9 @@ from django.conf import settings
 from django.contrib import admin 
 from django.urls import path, re_path 
 from .views import save_user_score
+from .views import save_high_score
+
+
 
 urlpatterns = [
          path("", views.index, name = "index"),
@@ -19,6 +22,7 @@ urlpatterns = [
     path('save_user_score/<str:quiz_identifier>/', save_user_score, name='save_user_score'),
     path("jamb", views.jamb, name = "jamb"),
     path("end", views.end, name = "end"),
+    path('high_scores/', save_high_score, name='high_scores'),
 
     # ... other URLs
 
