@@ -44,7 +44,7 @@ getNewQuestion = () => {
 
         // comment
 
-fetch('/high_scores/', {
+fetch('/end/', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
