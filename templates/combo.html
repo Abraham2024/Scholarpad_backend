@@ -75,7 +75,7 @@
         </div>  
         <p> This quiz consists of questions from chemistry, biology, physics and mathematics </p>  
         <div>  
-          <form name="userForm" method="post" action="save_user_score/1/">
+          <form name="userForm" method="post" action="save_user_score/1/combo1">
   {% csrf_token %}
   <div>
     <input type="text" class="input" name="username" placeholder="Enter Your Name" minlength="5" maxlength="50">
@@ -166,9 +166,44 @@
      displayIndent: '0' 
    }); 
  </script> 
-  
-      <script src="{% static 'assets/js/combo1.js' %}"</script>  
-      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> 
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'assets/js/combo1.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    function submitUserScore(username, score) {
+        // Assuming you have a function in your existing code to calculate the user's score
+        var calculatedScore = calculateUserScore(); // Replace with your actual scoring logic
+
+        // Assuming you have a function in your existing code to get the username
+        var enteredUsername = getEnteredUsername(); // Replace with your actual username retrieval logic
+
+        // Call saveUserScore function with the obtained username and calculated score
+        saveUserScore(enteredUsername, calculatedScore);
+    }
+
+    function saveUserScore(username, score) {
+        $.ajax({
+            type: 'POST',
+            url: '{% url "save_user_score" %}',
+            data: {
+                'username': username,
+                'score': score,
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function (data) {
+                // Handle success, e.g., show a message to the user
+                console.log('User score saved successfully.');
+            },
+            error: function (error) {
+                // Handle error, e.g., display an error message
+                console.error('Error saving user score:', error);
+            }
+        });
+    }
+
+    // Modify your existing code to call submitUserScore when needed
+</script>
+
   </body>  
   </html>
