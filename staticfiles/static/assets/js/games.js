@@ -40,7 +40,6 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        const username = prompt('Enter your username:');
 
         // comment
 
@@ -68,7 +67,7 @@ fetch('/end/', {
 // ...
 
 
-        return window.location.assign('high_scores');
+        return window.location.assign('end');
     }
 
     questionCounter++;
