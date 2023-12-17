@@ -42,24 +42,31 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         const username = prompt('Enter your username:');
 
-        // Send username and score to the Django server
-        fetch('/high_scores/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, score }),
-        }).then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Network response was not ok.');
-        }).then(data => {
-            // Handle the response if needed
-            console.log(data);
-        }).catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+        // comment
+
+fetch('/high_scores/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, score }),
+})
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(`Server returned ${response.status} ${response.statusText}`);
+    })
+    .then(data => {
+        // Handle the response if needed
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error.message);
+    });
+
+// ...
+
 
         return window.location.assign('high_scores');
     }
