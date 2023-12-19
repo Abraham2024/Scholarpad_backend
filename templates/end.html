@@ -1,32 +1,30 @@
-{% load static %} 
-<!DOCTYPE html>  
-<html lang="en">  
-
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />  
-  <title>Congrats!</title>  
-  <link rel="stylesheet" href="{% static 'assets/css/app.css' %}" />  
-</head>  
-
-<body>  
-  <div class="container">  
-    <div id="end" class="flex-center flex-column">  
-      <h1>Your score is: <span id="finalScore"></span></h1>  
-      <form id="saveScoreForm">  
-        <input type="text" name="username" id="username" placeholder="Enter your username" />  
-        <button type="button" class="btn" id="saveScoreBtn" onclick="saveHighScore()" disabled>  
-          Save  
-        </button>  
-      </form>  
-      <div id="sec-action">  
-        <a class="btn diff" href="game.html">Play Again</a>  
-        <a class="btn" href="index.html">Go Home</a>  
-      </div>  
-    </div>  
-  </div>  
-  <script src="{% static 'assets/js/end.js' %}"></script>  
-</body>  
-
+{% load static %}  
+<!DOCTYPE html>   
+<html lang="en">   
+<head>   
+  <meta charset="UTF-8" />   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />   
+  <title>Congrats!</title>   
+  <link rel="stylesheet" href="{% static 'assets/css/app.css' %}" />   
+</head>   
+<body>   
+  <div class="container">   
+    <div id="end" class="flex-center flex-column">   
+      <h1>Your score is: <span id="finalScore"></span></h1>   
+      <form id="saveScoreForm" method="post" action="high_scores">
+        {% csrf_token %}
+        <input type="text" name="username" id="username" placeholder="Enter your username" />   
+        <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore()" disabled>   
+          Save   
+        </button>   
+      </form>   
+      <div id="sec-action">   
+        <a class="btn diff" href="game.html">Play Again</a>   
+        <a class="btn" href="index.html">Go Home</a>   
+      </div>   
+    </div>   
+  </div>   
+  <script src="{% static 'assets/js/end.js' %}"></script>   
+</body>   
 </html>

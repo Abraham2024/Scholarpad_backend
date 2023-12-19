@@ -75,9 +75,13 @@
         </div>  
         <p> This quiz consists of questions from chemistry, biology, physics and mathematics </p>  
         <div>  
-          <input type="text" class="input" placeholder="Enter Your Name" minlength="5" maxlength="50">  
-        </div>  
-        <button class="btn btn1 start-quiz">Start Quiz</button>  
+          <form method="POST" action="combo">
+  {% csrf_token %}
+  <div>
+    <input type="text" class="input" name="username" placeholder="Enter Your Name" minlength="5" maxlength="50">
+  </div>
+  <button type="submit" class="btn btn1 start-quiz">Start Quiz</button>
+</form>
       </section>  
   
               <section class="sec3">  

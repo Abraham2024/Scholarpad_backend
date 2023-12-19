@@ -1,11 +1,4 @@
-// end.js
-const saveScoreForm = document.getElementById('saveScoreForm');
-const usernameInput = document.getElementById('username');
-const saveScoreBtn = document.getElementById('saveScoreBtn');
-const finalScore = document.getElementById('finalScore');
-
-// Assume you have a variable 'score' defined somewhere
-finalScore.innerText = score;
+// ...
 
 saveScoreForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -31,12 +24,11 @@ function saveHighScore(username) {
         body: JSON.stringify({ username, score }),
     }).then(response => {
         if (response.ok) {
-            return response.json();
+            // Redirect to the scores page or your desired URL
+            window.location.href = 'high_scores';
+        } else {
+            throw new Error('Network response was not ok.');
         }
-        throw new Error('Network response was not ok.');
-    }).then(data => {
-        // Handle the response if needed
-        console.log(data);
     }).catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
