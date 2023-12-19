@@ -1,5 +1,11 @@
 from django.contrib.auth.models import User
+# models.py
 from django.db import models
+
+class QuizScore(models.Model):
+    username = models.CharField(max_length=50)
+    score = models.IntegerField()
+
 
 #create your models here
 
@@ -24,22 +30,4 @@ class Feature(models.Model):
      name =  models.CharField(max_length=100)
      details = models.CharField(max_length=500)
 
-
-class Quiz(models.Model):
-    identifier = models.CharField(max_length=255, unique=True)
-    # Add other fields specific to your Quiz model
-
-class UserScore(models.Model):
-    name = models.CharField(max_length=255)
-    score = models.IntegerField()
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    date = models.DateField()
-
-
-class HighScore(models.Model):
-    username = models.CharField(max_length=255)
-    score = models.IntegerField()
-
-    def __str__(self):
-        return f"{self.username} - {self.score}"
 

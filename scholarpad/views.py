@@ -8,9 +8,21 @@ from .models import Feature
 from .models import UserProfile
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import UserScore, Quiz
 import json
-from .models import HighScore
+from .models import QuizScore
+
+def save_score(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        score = int(request.POST.get('score'))
+
+        # Save to database
+        QuizScore.objects.create(username=username, score=score)
+
+        return JsonResponse({'message': 'Score saved successfully.'})
+
+    return JsonResponse({'error': 'Invalid request method.'})
+
 
 def save_user_score(request, quiz_identifier):
     if request.method == 'POST':
@@ -122,24 +134,5 @@ def jamb(request):
 def games(request):
     return render(request, "games.html")
 
-def display_high_scores(request):
-    high_scores = HighScore.objects.all().order_by('-score')[:10]  # Get top 10 scores
-    return render(request, 'high_scores.html', {'high_scores': high_scores})
 
-
-def end(request):
-    # Assume you have the user object available in request.user
-    user = request.user
-    context = {'username': user.profile.username if hasattr(user, 'profile') else user.username}
-    return render(request, 'end.html', context)
-
-def save_high_score(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        score = request.POST.get('score')
-        high_score = HighScore(username=username, score=score)
-        high_score.save()
-        return JsonResponse({'message': 'High score saved successfully'})
-    else:
-        return JsonResponse({'message': 'Invalid request method'})
 
