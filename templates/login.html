@@ -33,7 +33,7 @@
 			 <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" 
                              onclick="togglePasswordVisibility('password')"> 
                      </div> 
-                     <a href="forget" id="forget">Forgot password?</a> 
+		     <a href="{% url 'reset_password' %}" id="forget">Forgot password?</a> 
                  </div> 
                  <br><br> 
                  <button class="loginbtn">Login</button> 
