@@ -54,8 +54,8 @@ def signup(request):
                 )
                 messages.info(request, 'Account created succesfully')
 
-                subject = "welcome to Scholarpad"
-                message = "We are glad to have you here with us!"
+                subject = "Welcome to Scholarpad"
+                message = "Welcome to Scholarpad, We're so glad to have you here. At Scholarpad, we offer 24/7 access to learning materials, including programming courses, so you can learn whenever and wherever you like. We're always working on adding new features and improving the user experience, so we'd love to hear your feedback.To help us serve you better, we've created a short survey. It should only take a few minutes to complete, and your feedback is invaluable to us. You can also reach us via WhatsApp. To fill out the survey, simply follow these steps: - Click on the link https://forms.gle/s4t9vYYPfdVHRyNU8. Thanks for taking the time to help us improve Scholarpad! Your feedback is important to us."
 
                 send_mail(
                         subject,
