@@ -62,7 +62,7 @@ def signup(request):
                         message,
                         settings.EMAIL_HOST_USER,
                         [user.email],
-                        fail_silently ==False,
+                        fail_silently=False
                         )
 
                 return redirect('login')
