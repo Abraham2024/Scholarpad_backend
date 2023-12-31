@@ -14,7 +14,7 @@
    justify-content: center; 
  } 
   
- .icons>img:last-child { 
+ #cert { 
    position: absolute; 
    bottom: 0; 
  } 
@@ -29,7 +29,7 @@
    height: 100vh; 
  } 
   
- .diff{ 
+ .diff { 
    height: 100%; 
  } 
   
@@ -39,6 +39,7 @@
    border-radius: 12px; 
    padding: 30px; 
    height: max-content; 
+   box-shadow: 0px 4px 8px rgba(17, 17, 17, 0.2); 
  } 
   
  .tex { 
@@ -102,7 +103,10 @@
    color: red; 
  } 
   
- #password { 
+ #password, 
+ #phone-no, 
+ select, 
+ textarea { 
    background-color: #dfe9eb; 
    border: none; 
    width: 100%; 
@@ -112,6 +116,11 @@
    box-sizing: border-box; 
    margin-bottom: 15px; 
    margin-top: 5px; 
+ } 
+  
+ textarea, 
+ select { 
+   border: 1px solid #6fcee1; 
  } 
   
  .log { 
@@ -126,13 +135,14 @@
    flex-direction: column; 
  } 
   
- #forget, p>a{ 
-  align-self: flex-end; 
-  text-decoration: none; 
-  text-decoration-color: none; 
-  color: rgb(72, 72, 37); 
-  font-size: 15px; 
-  font-weight: 500; 
+ #forget, 
+ p>a { 
+   align-self: flex-end; 
+   text-decoration: none; 
+   text-decoration-color: none; 
+   color: rgb(72, 72, 37); 
+   font-size: 15px; 
+   font-weight: 500; 
  } 
   
  p { 
@@ -143,7 +153,8 @@
    position: relative; 
  } 
   
- #show, #show2 { 
+ #show, 
+ #show2 { 
    position: absolute; 
    right: 10px; 
    bottom: 22px; 
@@ -162,12 +173,13 @@
    margin-top: 5px; 
  } 
   
- h5, label>span { 
+ h5, 
+ label>span { 
    color: red; 
  } 
   
  .loginbtn { 
-  background-color: #F4C430; 
+   background-color: #F4C430; 
    color: black; 
    width: 100%; 
    font-size: large; 
@@ -183,6 +195,15 @@
    font-weight: bolder; 
  } 
   
- input:focus { 
+ input:focus, select:focus, textarea:focus { 
    outline-color: #bfe1e8; 
+ } 
+  
+ #info { 
+  text-align: center; 
+  color: red; 
+ } 
+  
+ .log-diff { 
+   font-size: 1.6em; 
  }
