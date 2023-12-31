@@ -6,45 +6,9 @@ from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import Feature
 from .models import UserProfile
-from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
-import json
-from .models import QuizScore
-
-def save_score(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        score = int(request.POST.get('score'))
-
-        # Save to database
-        QuizScore.objects.create(username=username, score=score)
-
-        return JsonResponse({'message': 'Score saved successfully.'})
-
-    return JsonResponse({'error': 'Invalid request method.'})
-
-
-def save_user_score(request, quiz_identifier):
-    if request.method == 'POST':
-        data = json.loads(request.body.decode('utf-8'))
-        name = data.get('name')
-        score = data.get('score')
-        date = data.get('date')
-
-        # Get or create the quiz based on the identifier
-        quiz, created = Quiz.objects.get_or_create(identifier=quiz_identifier)
-
-        user_score = UserScore(name=name, score=score, quiz=quiz, date=date)
-        user_score.save()
-
-        return JsonResponse({'message': 'User score saved successfully'})
-    else:
-        return JsonResponse({'error': 'Invalid request method'})
-
-# Create your views here.
-def combo(request):
-    return render(request, 'combo.html')
-
 
 def index(request):
     features = Feature.objects.all()
@@ -90,6 +54,17 @@ def signup(request):
                 )
                 messages.info(request, 'Account created succesfully')
 
+                subject = "welcome to Scholarpad"
+                message = "We are glad to have you here with us!"
+
+                send_mail(
+                        subject,
+                        message,
+                        settings.EMAIL_HOST_USER,
+                        [user.email],
+                        fail_silently ==False,
+                        )
+
                 return redirect('login')
         else:
             messages.info(request, 'Password is not the same')
@@ -116,23 +91,13 @@ def logout(request):
      auth.logout(request)
      return redirect('/')
 
-def profile(request):
-    user_profile = UserProfile.objects.get(user=request.user)
-    return render(request, 'profile.html', {'user_profile': user_profile})
-
-def upload_profile_pic(request):
-    if request.method == 'POST':
-        user_profile = UserProfile.objects.get(user=request.user)
-        user_profile.profile_picture = request.FILES['profile_pic']
-        user_profile.save()
-    return redirect('profile')
-
-
 def jamb(request):
     return render(request, "jamb.html")
 
 def games(request):
     return render(request, "games.html")
+def combo(request):
+    return render(request, "combo.html")
 
 
 

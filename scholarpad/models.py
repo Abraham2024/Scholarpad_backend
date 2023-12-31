@@ -1,12 +1,7 @@
 from django.contrib.auth.models import User
 # models.py
 from django.db import models
-
-class QuizScore(models.Model):
-    username = models.CharField(max_length=50)
-    score = models.IntegerField()
-
-
+    
 #create your models here
 
 class UserProfile(models.Model):
