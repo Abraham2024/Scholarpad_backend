@@ -19,7 +19,7 @@
         <div class="forms-wrap">
           <form method="POST" autocomplete="off" class="sign-in-form">
             {% csrf_token %}
-            <div class="logo">
+            <!--div class="logo">
               <!--img src="./img/logo.png" alt="Scholarpad" /-->
               <img src="{% static 'assets/img/logo.png' %}" alt="Scholarpad">
               <h4>Scholarpad</h4>
@@ -44,7 +44,8 @@
                 <label for "password"> Confirm Password</label>
                 <!--img src="images/icon-hide.png" alt="show" id="show" onclick="togglePasswordVisibility('password')"-->
                 <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" onclick="togglePasswordVisibility('password')">
-              </div>
+              </div-->
+{{form.as_p}}
               <input type="submit" value="Change my password" class="sign-btn" />
             </div>
           </form>
