@@ -1,64 +1,111 @@
-{% load static %} 
- <!DOCTYPE html> 
- <html lang="en"> 
-  
- <head> 
-     <meta charset="UTF-8"> 
-     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-     <title>Scholarpad</title> 
-     <link href="{% static 'assets/css/form.css' %}" rel="stylesheet"> 
- </head> 
-  
- <body> 
-     <div class="loginwrap"> 
-         <div class="login"> 
-             {% for message in messages %} 
-             <h5>{{message}}</h5> 
-             {% endfor %} 
-             <div class="icons"> 
-		     <img src="{% static 'assets/images/icon-cap.png' %}" alt="cap"> 
-		     <img src="{% static 'assets/images/icon-cert.png' %}" alt="certificate"> 
-             </div> 
-             <h1 class="log">Student Login</h1> 
-             <form method="POST" action="login"> 
-                 {% csrf_token %} 
-                 <label for="username">Username</label> 
-                 <input type="text" id="username" name="username" placeholder="John" required> 
-                 <br> 
-                 <div class="password"> 
-                     <label for="password">Password </label> 
-                     <div> 
-                         <input type="password" id="password" name="password" placeholder="*****" required> 
-			 <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" 
-                             onclick="togglePasswordVisibility('password')"> 
-                     </div> 
-		     <a href="{% url 'reset_password' %}" id="forget">Forgot password?</a> 
-                 </div> 
-                 <br><br> 
-                 <button class="loginbtn">Login</button> 
-                 <br> 
-                 <p>Dont have an account? 
-                     <a href="https://selar.co/Scholarpad"> Sign up here</a> 
-                 </p> 
-  
-             </form> 
-         </div> 
-     </div> 
-     <script src="{% static 'assets/js/index.js' %}"></script> 
-     <script> 
-         function togglePasswordVisibility(fieldId) { 
-             var passwordInput = document.getElementById(fieldId); 
-  
-             if (passwordInput.type === "password") { 
-                 passwordInput.type = "text"; 
-		     document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-show.png' %}") 
-             } else { 
-                 passwordInput.type = "password"; 
-		     document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}") 
-             } 
-         } 
-     </script> 
- </body> 
-  
- </html>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎓 Scholarpad</title>
+  <!--link rel="stylesheet" href="style.css" /-->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div class="box">
+      <div class="inner-box">
+        <div class="forms-wrap">
+          <form method="POST" action="login" autocomplete="off" class="sign-in-form">
+            {% csrf_token %}
+            <div class="logo">
+              <!--img src="./img/logo.png" alt="Scholarpad" /-->
+              <img src="{% static 'assets/img/logo.png' %}" alt="Scholarpad">
+              <h4>Scholarpad</h4>
+            </div>
+
+            <div class="heading">
+              <h2>Welcome Back</h2>
+            </div>
+
+            <div class="actual-form">
+              <div class="input-wrap">
+                <input type="text" minlength="8" class="input-field" name="username" id="username" autocomplete="off" required />
+                <label for "username">Username</label>
+              </div>
+
+              <div class="input-wrap">
+                <input type="password" minlength="8" class="input-field" id="password" name="password" autocomplete="off" required />
+                <label for "password">Password</label>
+                <!--img src="images/icon-hide.png" alt="show" id="show" onclick="togglePasswordVisibility('password')"-->
+                <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" onclick="togglePasswordVisibility('password')">
+              </div>
+              <div class="left">
+                <a href="{% url 'reset_password' %}" id="forget">Forgot password?</a>
+              </div>
+              <br> <br>
+              <input type="submit" value="Log In" class="sign-btn" />
+
+              <p>Dont have an account?
+                <a href="https://selar.co/Scholarpad"> Sign up here</a>
+              </p>
+
+            </div>
+          </form>
+
+        </div>
+
+        <div class="carousel">
+          <div class="images-wrapper">
+            <!--img src="/img/R (1).jpeg" class="image img-1 show" alt="" /-->
+            <img src="{% static 'assets/img/R (2).jpeg' %}" alt="cap" class="image img-2">
+
+            <!--img src="/img/R (2).jpeg" class="image img-2" alt="" /-->
+            <img src="{% static 'assets/img/R (2).jpeg' %}" alt="cap" class="image img-2">
+
+            <!--img src="./img/image3.png" class="image img-3" alt="" /-->
+            <img src="{% static 'assets/img/image3.png' %}" alt="cap" class="image img-3">
+
+          </div>
+
+          <div class="text-slider">
+            <div class="text-wrap">
+              <div class="text-group">
+                <h2>Become the best</h2>
+                <h2>Ace your exams </h2>
+                <h2>Become a programmer </h2>
+              </div>
+            </div>
+
+            <div class="bullets">
+              <span class="active" data-value="1"></span>
+              <span data-value="2"></span>
+              <span data-value="3"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Javascript file -->
+  <script src="{% static 'assets/js/app.js' %}"></script>
+
+  <!--script src="app.js"></script-->
+  <script>
+    function togglePasswordVisibility(fieldId) {
+      var passwordInput = document.getElementById(fieldId);
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-show.png' %}")
+      } else {
+        passwordInput.type = "password";
+        document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}")
+      }
+    }
+  </script>
+</body>
+
+</html>
