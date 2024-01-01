@@ -34,8 +34,9 @@
 
             <div class="actual-form">
               <div class="input-wrap">
-                <input type="text" minlength="8" class="input-field" name="password" id="username" autocomplete="off" required />
+                <input type="password" minlength="8" class="input-field" name="password" id="username" autocomplete="off" required />
                 <label for "password">New password</label>
+    <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" onclick="togglePasswordVisibility('password')">
               </div>
 
               <div class="input-wrap">
