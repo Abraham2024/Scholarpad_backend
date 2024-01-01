@@ -1,108 +1,144 @@
-{% load static %}  
-<!DOCTYPE html>  
-<html lang="en">  
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-<head>  
-    <meta charset="UTF-8">  
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Scholarpad</title>  
-    <link href="{% static 'assets/css/form.css' %}" rel="stylesheet">  
-</head>  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎓 Scholarpad</title>
+  <!--link rel="stylesheet" href="style.css" /-->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
 
-<body>  
-    <div id="preloader"></div>  
-    <marquee>Dear esteemed users please note that we are trying to fix all glitches as regards user login please bear with us.... Wishing you a merry Christmas and prosperous new year in advance</marquee>  
-    <div class="loginwrap diff">  
-        <div class="login">  
-            {% for message in messages %}  
-            <h5>{{message}}</h5>  
-            {% endfor %}  
-            <div class="icons">  
-                <img src="{% static 'assets/images/icon-cap.png' %}" alt="cap">  
-                <img src="{% static 'assets/images/icon-cert.png' %}" alt="certificate">  
-            </div>  
-            <h1 class="log"> sign up <span class="text"> here </span></h1>  
-            <form method="POST" action="signup">  
-                {% csrf_token %}  
-                <label for="first_name">First Name <span>*</span></label>  
-                <input type="text" id="name" placeholder="John" name="first_name" required>  
-                <br>  
-                <label for="last_name">Last Name <span>*</span></label>  
-                <input type="text" id="name" placeholder="Smith" name="last_name" required>  
-                <br>  
-                <label for="username">Username <span>*</span></label>  
-                <input type="text" id="username" name="username" placeholder="john" required>  
-                <br>  
-                <label for="email">Email <span>*</span></label>  
-                <input type="email" id="email" name="email" placeholder="abc@mail.com" required>  
-                <br>  
-                <label for="phone_number">Phone number <span>*</span></label>  
-                <input type="number" name="phone_number" id="name" placeholder="+234 xxxxxxxx" required>  
-                <br>  
-                <label for="state">State <span>*</span></label>  
-                <input type="text" name="state" id="name" placeholder="Edo" required>  
-                <br>  
-                <label for="secret_question">Secret Question <span>*</span></label>  
-                <select name="secret_question" id = "name" required>
-                    <option value="q1">What is your favorite color?</option>
-                    <option value="q2">In which city were you born?</option>
-                    <option value="q3">What is the name of your best friend?</option>
-                    <!-- Add more options as needed -->
-                </select>
-                <br>
-                <label for="secret_answer">Secret Answer <span>*</span></label>
-                <input type="text" name="secret_answer" id = "name" placeholder="Your secret answer" required>
-                <br>  
-                <div class="password">  
-                    <label for="password">Enter password <span>*</span></label>  
-                    <div>  
-                        <input type="password" id="password" name="password" placeholder="****" required>  
-                        <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" onclick="togglePasswordVisibility()">  
-                    </div>  
-                </div>  
-                <br>   
-                <div class="password">  
-                    <label for="password2">Confirm Password <span>*</span></label>  
-                    <div>  
-                        <input type="password" id="password2" name="password2" placeholder="*****" required>  
-                        <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show2" onclick="togglePasswordVisibility2()">  
-                    </div>  
-                </div>  
-                <br>  
-                <button class="loginbtn">Sign Up </button>  
-                <br>  
-                <p> Already have an account? <a href="login"> Login in here </a> </p>  
-            </form>  
-        </div>  
-    </div>  
-    <script src="{% static 'assets/js/index.js' %}"></script>  
-    <script>  
-        function togglePasswordVisibility() {  
-            var passwordInput = document.getElementById("password");  
-            var password2Input = document.getElementById("password2");  
-  
-            if (passwordInput.type === "password") {  
-                passwordInput.type = "text";  
-                document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-show.png'%}")  
-            } else {  
-                passwordInput.type = "password";  
-                document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}")  
-            }  
-        }  
-  
-        function togglePasswordVisibility2() {  
-            var password2Input = document.getElementById("password2");  
-  
-            if (password2Input.type === "password") {  
-                password2Input.type = "text";  
-                document.getElementById('show2').setAttribute('src', "{% static 'assets/images/icon-show.png' %}")  
-            } else {  
-                password2Input.type = "password";  
-                document.getElementById('show2').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}")  
-            }  
-        }  
-    </script>  
-</body>  
+<body>
+  <main>
+    <div class="box">
+      <div class="inner-box">
+        <div class="forms-wrap">
+          <form action="signup" method="POST" autocomplete="off" class="sign-in-form">
+            {% csrf_token %}
+            <div class="logo">
+               <img src="{% static 'assets/img/logo.png' %}" alt="Scholarpad">
+              <h4>Scholarpad</h4>
+            </div>
+
+            <div class="heading">
+              <h2>New Here!</h2>
+            </div>
+
+            <div class="actual-form">
+              <div class="input-wrap">
+                <input type="text" minlength="4" class="input-field" autocomplete="off" name="first_name" required />
+                <label for="first_name">First Name*</label>
+              </div>
+
+              <div class="input-wrap">
+                <input type="text" minlength="4" class="input-field" autocomplete="off" name="last_name" required />
+                <label for="last_name">Last Name*</label>
+              </div>
+
+
+              <div class="input-wrap">
+                <input type="email" minlength="4" class="input-field" autocomplete="off" required name="email" />
+                <label for="email">Email <span>*</span></label>
+              </div>
+
+              <div class="input-wrap">
+                <input type="text" minlength="4" class="input-field" autocomplete="off" required name="username" id="username" />
+                <label for="username">Username*</label>
+              </div>
+
+              <div class="input-wrap">
+                <input type="number" minlength="9" class="input-field" autocomplete="off" required name="phone_number" id="phone_number" />
+                <label for="phone_number">Phone number*</label>
+              </div>
+
+              <div class="input-wrap">
+                <input type="password" minlength="8" class="input-field" autocomplete="off" id="password" id="password" required />
+                <label for="password">Password</label>
+                <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show" onclick="togglePasswordVisibility()">
+              </div>
+
+              <div class="input-wrap">
+                <input type="password" minlength="4" class="input-field" id="password2" name="password2" autocomplete="off" required />
+                <label for "password2"> Confirm Password</label>
+                <img src="{% static 'assets/images/icon-hide.png' %}" alt="show" id="show2" onclick="togglePasswordVisibility2()">
+              </div>
+
+
+              <input type="submit" value="Sign Up" class="sign-btn" />
+
+              <br>
+              <p>Already have an account?
+                <a href="login"> Log in here</a>
+              </p>
+
+            </div>
+          </form>
+
+        </div>
+
+        <div class="carousel">
+          <div class="images-wrapper">
+            <!--img src="/img/R (1).jpeg" class="image img-1 show" alt="" /-->
+            <img src="{% static 'assets/img/R (1).jpeg' %}" alt="cap" class="image img-1 show">
+            <!--img src="/img/R (2).jpeg" class="image img-2" alt="" /-->
+            <img src="{% static 'assets/img/R (2).jpeg' %}" alt="cap" class="image img-2">
+            <!--img src="/img/image3.png" class="image img-3" alt="" /-->
+            <img src="{% static 'assets/img/image3.png' %}" alt="cap" class="image img-3">
+          </div>
+
+          <div class="text-slider">
+            <div class="text-wrap">
+              <div class="text-group">
+                <h2>Become the best</h2>
+                <h2>Ace your exams</h2>
+                <h2>Become a programmer</h2>
+              </div>
+            </div>
+
+            <div class="bullets">
+              <span class="active" data-value="1"></span>
+              <span data-value="2"></span>
+              <span data-value="3"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Javascript file -->
+  <script src="{% static 'assets/js/app.js' %}"></script>
+
+  <!--script src="app.js"></script-->
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var password2Input = document.getElementById("password2");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-show.png'%}")
+      } else {
+        passwordInput.type = "password";
+        document.getElementById('show').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}")
+      }
+    }
+
+    function togglePasswordVisibility2() {
+      var password2Input = document.getElementById("password2");
+
+      if (password2Input.type === "password") {
+        password2Input.type = "text";
+        document.getElementById('show2').setAttribute('src', "{% static 'assets/images/icon-show.png' %}")
+      } else {
+        password2Input.type = "password";
+        document.getElementById('show2').setAttribute('src', "{% static 'assets/images/icon-hide.png' %}")
+      }
+    }
+  </script>
+</body>
 
 </html>
