@@ -19,13 +19,10 @@ def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
-        secret_question = request.POST['secret_question']
-        secret_answer = request.POST['secret_answer']
         password = request.POST['password']
         password2 = request.POST['password2']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
-        state = request.POST['state']
         phone_number = request.POST['phone_number']
 
         if password == password2:
@@ -46,11 +43,7 @@ def signup(request):
                     user=user,
                     first_name=first_name,
                     last_name=last_name,
-                    state = state,
                     phone_number = phone_number,
-                    secret_question = secret_question,
-                    secret_answer = secret_answer,
-
                 )
                 messages.info(request, 'Account created succesfully')
 
