@@ -24,7 +24,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 #SECRET_KEY = #'django-insecure-&*#^s-!)6ixkm#iza8#*t0m#-@!9@b35@e1gzezlv-#huokik&%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["https://scholarpad.up.railway.app"]
