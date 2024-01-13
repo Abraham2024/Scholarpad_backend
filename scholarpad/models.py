@@ -17,7 +17,6 @@ class Feature(models.Model):
      details = models.CharField(max_length=500)
 
 def __str__(self):
-
-return f'UserProfile: {self.first_name}'
+    return f'UserProfile: {self.first_name}'
 
 
